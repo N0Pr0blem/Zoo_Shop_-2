@@ -1,7 +1,6 @@
 package org.example.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
@@ -17,16 +16,20 @@ import java.util.Set;
  public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
-    String username;
-    String phoneNumber;
-    String email;
-    String password;
-    Address address;
+    private Long id;
+    private String username;
+    private String phoneNumber;
+    private String email;
+    private String password;
+
+    /*@ElementCollection(targetClass = Address.class, fetch = FetchType.EAGER)
+    @CollectionTable(name = "user_address", joinColumns = @JoinColumn(name = "address_id", referencedColumnName = "id"))
+    private Set<Address> address;
+    */
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
-    Set<Role> roles;
+    private Set<Role> roles;
 
     public User(String username, String email, String password) {
         this.username = username;
@@ -36,7 +39,6 @@ import java.util.Set;
     }
 
     @Override
-
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return getRoles();
     }
