@@ -15,9 +15,11 @@ public class Company {
     private String name;
     private String image;
 
-    public Company(Long id, String name, String image) {
-        this.id = id;
+    public Company(String name, String image) {
         this.name = name;
         this.image = image;
+    }
+    public Company(){
+
     }
 }
