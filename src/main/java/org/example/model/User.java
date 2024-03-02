@@ -22,10 +22,22 @@ import java.util.Set;
     private String email;
     private String password;
 
-    /*@ElementCollection(targetClass = Address.class, fetch = FetchType.EAGER)
-    @CollectionTable(name = "user_address", joinColumns = @JoinColumn(name = "address_id", referencedColumnName = "id"))
+    @ManyToMany
+    @JoinTable(
+            name = "user_address",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "address_id")
+    )
     private Set<Address> address;
-    */
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_product",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id")
+    )
+    Set<Product> product;
+
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)

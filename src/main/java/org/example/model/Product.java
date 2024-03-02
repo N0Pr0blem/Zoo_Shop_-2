@@ -14,6 +14,8 @@ public class Product {
     private Long id;
     private String name;
     private Double price;
+    @ManyToOne
+    @JoinColumn(name = "company_id")
     private Company company;
     private String description;
     private Integer count;
