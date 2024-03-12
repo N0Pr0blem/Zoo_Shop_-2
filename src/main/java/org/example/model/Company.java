@@ -13,11 +13,9 @@ public class Company {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     private String name;
-    private String image;
 
-    public Company(String name, String image) {
+    public Company(String name) {
         this.name = name;
-        this.image = image;
     }
     public Company(){}
 }

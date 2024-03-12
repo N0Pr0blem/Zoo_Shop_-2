@@ -15,6 +15,8 @@ public class Product {
     private String name;
     private Double price;
     private Double discount;
+    @Enumerated(EnumType.STRING)
+    private ProductType type;
     @ManyToOne
     @JoinColumn(name = "company_id")
     private Company company;
@@ -22,7 +24,7 @@ public class Product {
     private Integer count;
     private String image;
 
-    public Product(String name, Double price,Double discount, Company company, String description, Integer count, String image) {
+    public Product(String name, Double price,Double discount, Company company, String description, Integer count, String image,ProductType type) {
         this.name = name;
         this.price = price;
         this.company = company;
@@ -30,6 +32,7 @@ public class Product {
         this.count = count;
         this.image = image;
         this.discount = discount;
+        this.type = type;
     }
     public Product(){}
 }
