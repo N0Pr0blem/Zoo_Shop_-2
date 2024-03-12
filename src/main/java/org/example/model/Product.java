@@ -14,6 +14,7 @@ public class Product {
     private Long id;
     private String name;
     private Double price;
+    private Double discount;
     @ManyToOne
     @JoinColumn(name = "company_id")
     private Company company;
@@ -21,12 +22,14 @@ public class Product {
     private Integer count;
     private String image;
 
-    public Product(String name, Double price, Company company, String description, Integer count, String image) {
+    public Product(String name, Double price,Double discount, Company company, String description, Integer count, String image) {
         this.name = name;
         this.price = price;
         this.company = company;
         this.description = description;
         this.count = count;
         this.image = image;
+        this.discount = discount;
     }
+    public Product(){}
 }

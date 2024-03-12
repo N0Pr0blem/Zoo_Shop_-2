@@ -50,6 +50,8 @@ import java.util.Set;
         roles.add(Role.USER);
     }
 
+    public User(){}
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return getRoles();

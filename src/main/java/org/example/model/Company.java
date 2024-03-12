@@ -19,7 +19,5 @@ public class Company {
         this.name = name;
         this.image = image;
     }
-    public Company(){
-
-    }
+    public Company(){}
 }
