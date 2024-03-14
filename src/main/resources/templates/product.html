@@ -7,7 +7,10 @@
 <body>
 cats
 <div th:each="product : ${products}">
-    <p th:text="${product}.name"></p>
+    <p th:text="${product.name}"></p>
+    <form th:action="@{'/product/'+${product.id}+'/delete'}" method="post">
+        <button type="submit">delete</button>
+    </form>
 </div>
 </body>
 </html>
