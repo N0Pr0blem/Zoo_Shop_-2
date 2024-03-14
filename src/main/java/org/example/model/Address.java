@@ -24,4 +24,5 @@ public class Address {
         this.houseNumber = house_number;
         this.flatNumber = flat_number;
     }
+    public Address(){}
 }

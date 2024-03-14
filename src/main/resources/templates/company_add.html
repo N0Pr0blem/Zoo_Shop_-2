@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/companies/add}" method="post">
+    <h1>New company</h1>
+    <label>name:</label>
+    <input type="text" name="name">
+    <button type="submit">OK</button>
+</form>
+</body>
+</html>
