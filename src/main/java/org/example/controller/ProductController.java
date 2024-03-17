@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import io.minio.errors.*;
 import org.example.model.Category;
 import org.example.model.Product;
 import org.example.model.ProductType;
@@ -14,6 +15,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
+import java.io.IOException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 
 @Controller
 @RequestMapping("/product")
@@ -82,6 +86,12 @@ public class ProductController {
     @PostMapping("/{product}/delete")
     public String deleteProduct(@PathVariable Product product){
         productService.delete(product);
-        return "redirect: /product";
+        return "redirect:/product";
+    }
+
+    @GetMapping("/get")
+    public String getImage(Model model) throws ServerException, InsufficientDataException, ErrorResponseException, IOException, NoSuchAlgorithmException, InvalidKeyException, InvalidResponseException, XmlParserException, InternalException {
+        model.addAttribute("img",minioService.getImage("parot.jpg"));
+        return "test";
     }
 }
