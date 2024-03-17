@@ -29,12 +29,20 @@
                     th:value = "${comp.id}">
             </option>
         </select><br>
+        <label>category</label>
+        <select name="category">
+            <option value="none" selected>Выбор названия категории</option>
+            <option th:each="cat : ${categories}"
+                    th:text="${cat.name}"
+                    th:value = "${cat.id}">
+            </option>
+        </select><br>
         <label>description</label>
         <input type="text" name="description"><br>
         <label>count</label>
         <input type="text" name="count"><br>
         <label>image</label>
-        <input type="text" name="image"><br>
+        <input type="file" name="image"><br>
         <button type="submit">Add</button>
     </form>
 </body>
