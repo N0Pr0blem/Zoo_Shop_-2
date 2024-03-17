@@ -20,19 +20,22 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "company_id")
     private Company company;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
     private String description;
     private Integer count;
     private String image;
 
-    public Product(String name, Double price,Double discount, Company company, String description, Integer count, String image,ProductType type) {
+    public Product(String name, Double price,Double discount, Company company, String description, Integer count,ProductType type,Category category) {
         this.name = name;
         this.price = price;
         this.company = company;
         this.description = description;
         this.count = count;
-        this.image = image;
         this.discount = discount;
         this.type = type;
+        this.category = category;
     }
     public Product(){}
 }

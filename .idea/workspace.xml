@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91ea0ac6-38f7-4a1b-93b5-2be433a22c7c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exception/DBException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/product_add.html" afterDir="false" />
+    <list default="true" id="91ea0ac6-38f7-4a1b-93b5-2be433a22c7c" name="Changes" comment="Add categories for products and make crutch for uploading images ti minio">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repos/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repos/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/cat.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/MinioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/MinioService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,10 +18,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
-        <option value="HTML File" />
+        <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -137,7 +133,31 @@
       <option name="project" value="LOCAL" />
       <updated>1710273079050</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="base functions with products">
+      <option name="closed" value="true" />
+      <created>1710449656044</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1710449656044</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Minio uploading files WORK!!!!!">
+      <option name="closed" value="true" />
+      <created>1710528106770</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1710528106770</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Add categories for products and make crutch for uploading images ti minio">
+      <option name="closed" value="true" />
+      <created>1710696352551</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1710696352551</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -149,6 +169,9 @@
     <MESSAGE value="workable repository" />
     <MESSAGE value="add empty constructors" />
     <MESSAGE value="workable company components" />
-    <option name="LAST_COMMIT_MESSAGE" value="workable company components" />
+    <MESSAGE value="base functions with products" />
+    <MESSAGE value="Minio uploading files WORK!!!!!" />
+    <MESSAGE value="Add categories for products and make crutch for uploading images ti minio" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add categories for products and make crutch for uploading images ti minio" />
   </component>
 </project>

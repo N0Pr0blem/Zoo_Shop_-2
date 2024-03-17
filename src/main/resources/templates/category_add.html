@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/category/add}" method="post">
+    <h1>New category</h1>
+    <label>name:</label>
+    <input type="text" name="name">
+    <select name="type">
+        <option value="none" selected>Выбор типа товара</option>
+        <option th:each="enumm : ${T(org.example.model.ProductType).values()}"
+                th:text="${enumm}"
+                th:value = "${enumm}">
+        </option>
+    </select><br>
+    <button type="submit">OK</button>
+</form>
+</body>
+</html>
