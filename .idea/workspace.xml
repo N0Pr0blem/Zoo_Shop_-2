@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91ea0ac6-38f7-4a1b-93b5-2be433a22c7c" name="Changes" comment="Add categories for products and make crutch for uploading images ti minio">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/test.html" afterDir="false" />
+    <list default="true" id="91ea0ac6-38f7-4a1b-93b5-2be433a22c7c" name="Changes" comment="gg">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/adminka.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/CompanyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/MinioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/MinioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/category_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_category_add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/company_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_company_add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/product_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_product_add.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +27,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -42,7 +49,7 @@
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;realization&quot;
+    &quot;git-widget-placeholder&quot;: &quot;adminka&quot;
   }
 }</component>
   <component name="RunManager">

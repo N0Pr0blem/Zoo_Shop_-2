@@ -24,21 +24,5 @@ public class CompanyController {
         model.addAttribute("companies",companyService.getAll());
         return "companies";
     }
-    @PostMapping("/add")
-    public String addCompany(Company company, Model model){
-        String message="";
-        try{
-            companyService.addCompany(company);
-        }
-        catch(Exception ex){
-        }
-        finally{
-            model.addAttribute("message",message);
-        }
-        return "redirect:/companies";
-    }
-    @GetMapping("/add")
-    public String addCompanyPage(){
-        return "company_add";
-    }
+
 }
