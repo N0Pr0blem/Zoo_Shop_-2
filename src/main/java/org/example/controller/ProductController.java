@@ -58,7 +58,7 @@ public class ProductController {
 
     @GetMapping("/get")
     public String getImage(Model model) throws ServerException, InsufficientDataException, ErrorResponseException, IOException, NoSuchAlgorithmException, InvalidKeyException, InvalidResponseException, XmlParserException, InternalException {
-        model.addAttribute("img", minioService.getImage("parot.jpg"));
+        model.addAttribute("img", minioService.getImage("adultcss.jpg"));
         return "test";
     }
 }
