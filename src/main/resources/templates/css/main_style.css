@@ -2,7 +2,7 @@
 #hero{
     width:100%;
     height:100vh;
-    background:url(images/fon.jpg);
+    background:url(/image/fon.jpg);
     background-size: cover;
     position: relative;
 }
