@@ -1,66 +1,20 @@
-<!DOCTYPE html>
-<html lang="ru" xmlns:th="https://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
-</head>
-<body>
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <title>Title</title>
-    <meta charset="utf-8" />
-    <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
     />
-    <link href="css/main_style.css" th:href="@{/css/main_style.css}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main_style.css}"/>
 </head>
 <body>
-<header>
-    <nav class="navbar navbar-expand-md fixed-top bg-light ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">PetPlace</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="d-flex flex-row-reverse bd-highlight" id="navbarCollapse">
-
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="9" cy="6.5" r="5.5" stroke="#3E3E3E" stroke-width="2"></circle>
-                                <path d="M1 16.2255C2.78958 13.6706 5.75551 12 9.11162 12C12.3318 12 15.1927 13.5379 17 15.9194" stroke="#3E3E3E" stroke-width="2"></path>
-                            </svg>
-                            <span>Личный кабинет</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <svg width="18" height="21" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1.60107 6.81592H16.2024V16.0715C16.2024 17.7284 14.8592 19.0715 13.2024 19.0715H4.60108C2.94422 19.0715 1.60107 17.7284 1.60107 16.0715V6.81592Z" stroke="#3E3E3E" stroke-width="2"></path>
-                                <path d="M12.9019 6.81592L12.9019 5.81592C12.9019 3.60678 11.111 1.81592 8.90186 1.81592V1.81592C6.69272 1.81592 4.90186 3.60678 4.90186 5.81592L4.90186 6.81592" stroke="#3E3E3E" stroke-width="2"></path>
-                            </svg>
-                            <span>Корзина</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
+<header th:insert="blocks/header :: header"></header>
 <section id="hero" class="d-flex align-items-center justify-content-center">
     <div class="container text-center">
         <div class="row justify-content-center">
@@ -77,9 +31,9 @@
     <section id="slider-container" class="container">
         <div class="slider-wrapper">
             <div class="slider">
-                <img id="slide-1" src="images/kit.jpg" alt="Здарова">
-                <img id="slide-2" src="images/zver.jpg" alt="Здарова">
-                <img id="slide-3" src="images/kurva_homik.jpg" alt="Здарова">
+                <img id="slide-1" th:src="@{image/kit.jpg}" alt="Здарова">
+                <img id="slide-2" th:src="@{image/zver.jpg}" alt="Здарова">
+                <img id="slide-3" th:src="@{image/kurva_homik.jpg}" alt="Здарова">
             </div>
             <div class="slider-nav">
                 <a href="#slider-1"></a>
@@ -106,48 +60,39 @@
         <h2 class="container">Бренды <a class="link-info" href="/companies">больше ></a></h2><br>
         <div class="row row-cols-4">
             <div class="col company-item">
-                <a href="#"><img src="images/pro_plan.png" alt=""></a>
+                <a href="#"><img src="" alt=""></a>
             </div>
             <div class="col company-item">
-                <a href="#"><img src="images/brit.png" alt=""></a>
+                <a href="#"><img src="" alt=""></a>
             </div>
             <div class="col company-item">
-                <a href="#"><img src="images/happy_cat.png" alt=""></a>
+                <a href="#"><img src="" alt=""></a>
             </div>
             <div class="col company-item">
-                <a href="#"><img src="images/eukanuba-new.jpg" alt=""></a>
+                <a href="#"><img th:src="@{image/eukanuba-new.jpg}" alt=""></a>
             </div>
             <div class="col company-item">
-                <a href="#"><img src="images/bonaCibo.png" alt=""></a>
+                <a href="#"><img src="" alt=""></a>
             </div>
             <div class="col company-item">
-                <a href="#"><img src="images/rc.jpg" alt=""></a>
+                <a href="#"><img th:src="@{image/rc.jpg}" alt=""></a>
             </div>
             <div class="col company-item">
-                <a href="#"><img src="images/sheba.png" alt=""></a>
+                <a href="#"><img src="" alt=""></a>
             </div>
             <div class="col company-item">
-                <a href="#"><img src="images/unica.png" alt=""></a>
+                <a href="#"><img src="" alt=""></a>
             </div>
             <div class="col company-item">
-                <a href="#"><img src="images/g10_1.png" alt=""></a>
+                <a href="#"><img src="" alt=""></a>
             </div>
             <div class="col company-item">
-                <a href="#"><img src="images/benek.jpg" alt=""></a>
+                <a href="#"><img th:src="@{image/benek.jpg}" alt=""></a>
             </div>
         </div>
     </div>
 </main>
-<footer class="text-body-secondary py-5 bg-dark">
-    <div class="container">
-        <p class="float-end mb-1">
-            <a href="#">Наверх</a>
-        </p>
-        <p class="mb-1">Сайт сделан при поддержке bootstrap-5, видосов на youtube, а также моих нервных клеток :)</p>
-        <p>@2024 BSUIR</p>
-    </div>
-</footer>
-
+<footer th:insert="blocks/footer :: footer" class="text-body-secondary py-5 bg-dark"></footer>
 <script
         src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91ea0ac6-38f7-4a1b-93b5-2be433a22c7c" name="Changes" comment="add admin controller and base admin functions">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/css/main_style.css" afterDir="false" />
+    <list default="true" id="91ea0ac6-38f7-4a1b-93b5-2be433a22c7c" name="Changes" comment="промежуточный коммит перед добалением конфига">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/blocks/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/blocks/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/css/header.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/MinioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/MinioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/css/main_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/css/main_style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/product.html" afterDir="false" />
     </list>
@@ -22,8 +26,9 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -45,7 +50,10 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "next-try",
-    "last_opened_file_path": "D:/Code/Java/Storehouse/src/main/resources/templates/css"
+    "last_opened_file_path": "D:/Code/Java/Storehouse/src/main/resources/templates/css",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -176,7 +184,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710861633541</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="промежуточный коммит перед добалением конфига">
+      <option name="closed" value="true" />
+      <created>1711381920294</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1711381920294</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -192,6 +208,7 @@
     <MESSAGE value="Minio uploading files WORK!!!!!" />
     <MESSAGE value="Add categories for products and make crutch for uploading images ti minio" />
     <MESSAGE value="add admin controller and base admin functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="add admin controller and base admin functions" />
+    <MESSAGE value="промежуточный коммит перед добалением конфига" />
+    <option name="LAST_COMMIT_MESSAGE" value="промежуточный коммит перед добалением конфига" />
   </component>
 </project>
