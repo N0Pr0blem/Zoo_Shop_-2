@@ -9,7 +9,7 @@
 <div th:each="product : ${products}">
     <p th:text="${product.name}"></p>
     <p th:text="${product.price}"></p>
-    <img height="100px" width="100px" th:src="@{'/'+${product.image}+'/get'}" alt="Image">
+    <img height="100px" width="100px" th:src="@{'/image/'+${product.image}}" alt="Image">
     <form th:action="@{'/admin/product/'+${product.id}+'/delete'}" method="post">
         <button type="submit">delete</button>
     </form>

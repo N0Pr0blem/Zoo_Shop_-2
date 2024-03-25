@@ -10,17 +10,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.io.IOException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
+@RequestMapping("/image")
 @Controller
 public class MinioController {
     @Autowired
     MinioService minioService;
 
-    @GetMapping("{image}/get")
+    @GetMapping("/{image}")
     public ResponseEntity<byte[]> getImage(@PathVariable String image) throws ServerException, InsufficientDataException, ErrorResponseException, IOException, NoSuchAlgorithmException, InvalidKeyException, InvalidResponseException, XmlParserException, InternalException {
         byte[] imageBytes = minioService.getImage(image);
         HttpHeaders headers = new HttpHeaders();
