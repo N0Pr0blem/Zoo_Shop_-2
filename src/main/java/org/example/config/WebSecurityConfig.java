@@ -1,5 +1,6 @@
 package org.example.config;
 
+import org.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +24,7 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(
                         (requests) -> requests
-                                .requestMatchers("/admin/**", "/account").permitAll()
+                                .requestMatchers("/admin/**").authenticated()
                                 .anyRequest().permitAll())
                 .formLogin((form) -> form
                         .loginPage("/login")
