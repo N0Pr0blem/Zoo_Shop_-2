@@ -4,19 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91ea0ac6-38f7-4a1b-93b5-2be433a22c7c" name="Changes" comment="insert main page">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/css/product_style.css" afterDir="false" />
+    <list default="true" id="91ea0ac6-38f7-4a1b-93b5-2be433a22c7c" name="Changes" comment="Output of all models">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_categories_all.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_categories_all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_companies_all.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_companies_all.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_category_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_category_add.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_company_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_company_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_products_all.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_products_all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/adminka.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/adminka.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blocks/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blocks/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/product.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +23,9 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -210,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711385292932</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Output of all models">
+      <option name="closed" value="true" />
+      <created>1711532960583</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1711532960583</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -229,6 +232,7 @@
     <MESSAGE value="промежуточный коммит перед добалением конфига" />
     <MESSAGE value="css connect success" />
     <MESSAGE value="insert main page" />
-    <option name="LAST_COMMIT_MESSAGE" value="insert main page" />
+    <MESSAGE value="Output of all models" />
+    <option name="LAST_COMMIT_MESSAGE" value="Output of all models" />
   </component>
 </project>
