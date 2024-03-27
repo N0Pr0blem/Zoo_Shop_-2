@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91ea0ac6-38f7-4a1b-93b5-2be433a22c7c" name="Changes" comment="registration work">
+    <list default="true" id="91ea0ac6-38f7-4a1b-93b5-2be433a22c7c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/blocks/slider.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/css/main_slider.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_category_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_category_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/adminka.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/adminka.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +22,9 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="CSS File" />
         <option value="Class" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -246,7 +246,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711539723598</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="logining work">
+      <option name="closed" value="true" />
+      <created>1711543300412</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1711543300412</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -268,6 +276,7 @@
     <MESSAGE value="Output of all models" />
     <MESSAGE value="Add base user components" />
     <MESSAGE value="registration work" />
-    <option name="LAST_COMMIT_MESSAGE" value="registration work" />
+    <MESSAGE value="logining work" />
+    <option name="LAST_COMMIT_MESSAGE" value="logining work" />
   </component>
 </project>

@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/main_style.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main_slider.css}"/>
 </head>
 <body>
 <header th:insert="blocks/header :: header"></header>
@@ -28,20 +29,7 @@
 </section>
 <main>
 
-    <section id="slider-container" class="container">
-        <div class="slider-wrapper">
-            <div class="slider">
-                <img id="slide-1" th:src="@{image/kit.jpg}" alt="Здарова">
-                <img id="slide-2" th:src="@{image/zver.jpg}" alt="Здарова">
-                <img id="slide-3" th:src="@{image/kurva_homik.jpg}" alt="Здарова">
-            </div>
-            <div class="slider-nav">
-                <a href="#slider-1"></a>
-                <a href="#slider-2"></a>
-                <a href="#slider-3"></a>
-            </div>
-        </div>
-    </section>
+    <section th:insert="blocks/slider :: slider" class="container"></section>
 
     <div class="img-container-1">
         <h1 class="redirector-text">Кто твой питомец?</h1>
