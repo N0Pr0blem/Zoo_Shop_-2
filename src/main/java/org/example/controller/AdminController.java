@@ -9,6 +9,7 @@ import org.example.service.MinioService;
 import org.example.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +18,7 @@ import java.io.File;
 
 @Controller
 @RequestMapping("/admin")
+@PreAuthorize("hasAuthority('USER')")
 public class AdminController {
     @Autowired
     ProductService productService;

@@ -10,21 +10,21 @@
 <main class="form-signin w-100 m-auto">
     <form th:action="@{/login}" method="post"
           style="width:500px;height:100px;margin-left: auto; margin-right: auto;text-align:center;">
-        <a href="/home"><img class="mb-4" src="https://imageup.ru/img93/4607471/panda.jpg" alt="" width="100"
+        <a href="/"><img class="mb-4" src="https://imageup.ru/img93/4607471/panda.jpg" alt="" width="100"
                              height="100"></a>
-        <h1 class="h3 mb-3 fw-normal">Please sign in</h1><br>
+        <h1 class="h3 mb-3 fw-normal">Авторизация</h1><br>
         <div class="form-floating">
             <input type="text" name="username" class="form-control" id="floatingInput" placeholder="Login">
-            <label for="floatingInput">Login</label>
+            <label for="floatingInput">Логин</label>
         </div>
         <br>
         <div class="form-floating">
             <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
+            <label for="floatingPassword">Пароль</label>
         </div>
         <br>
-        <button class="btn btn-warning   w-100 py-2" type="submit">Sign in</button>
-        <a th:href="@{/registration}">Registration</a>
+        <button class="btn btn-success w-100 py-2" type="submit">Вход</button>
+        <a th:href="@{/registration}">Регистрация</a>
     </form>
 </main>
 </body>
