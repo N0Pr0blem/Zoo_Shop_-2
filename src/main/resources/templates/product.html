@@ -10,17 +10,27 @@
             crossorigin="anonymous"
     />
     <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/product_style.css}"/>
 </head>
 <body>
 <header th:insert="blocks/header :: header"></header>
-<h1>Товары</h1>
-<div th:each="product : ${products}">
-    <p th:text="${product.name}"></p>
-    <p th:text="${product.price}"></p>
-    <img height="100px" width="100px" th:src="@{'/image/'+${product.image}}" alt="Image">
-    <form th:action="@{'/admin/product/'+${product.id}+'/delete'}" method="post">
-        <button type="submit">delete</button>
-    </form>
+<div class="container main">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col" th:each="product : ${products}">
+            <div class="card shadow-sm">
+                <div class="image-container">
+                <a class="card-image" href="#"><img class="bd-placeholder-img card-img-top" th:src="@{'/image/'+${product.image}}" alt="Image"></a>
+                </div>
+                    <div class="card-body">
+                    <h6 th:text="${product.name}"></h6>
+                    <p th:text="${product.price}"></p>
+                </div>
+                <form th:action="@{'/admin/product/'+${product.id}+'/delete'}" method="post">
+                    <button class="btn btn-success" type="submit">delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

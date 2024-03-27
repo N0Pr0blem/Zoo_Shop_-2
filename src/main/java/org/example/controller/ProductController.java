@@ -1,6 +1,7 @@
 package org.example.controller;
 
 import io.minio.errors.*;
+import org.example.model.Product;
 import org.example.service.CategoryService;
 import org.example.service.CompanyService;
 import org.example.service.MinioService;
@@ -55,7 +56,6 @@ public class ProductController {
         model.addAttribute("products", productService.getParrotProducts());
         return "product";
     }
-
     @GetMapping("/get")
     public String getImage(Model model) throws ServerException, InsufficientDataException, ErrorResponseException, IOException, NoSuchAlgorithmException, InvalidKeyException, InvalidResponseException, XmlParserException, InternalException {
         model.addAttribute("img", minioService.getImage("adultcss.jpg"));

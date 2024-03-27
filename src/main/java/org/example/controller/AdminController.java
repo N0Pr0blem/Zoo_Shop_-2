@@ -72,7 +72,7 @@ public class AdminController {
     @PostMapping("/category/add")
     public String addCategory(Category category){
         categoryService.add(category);
-        return "redirect:/";
+        return "redirect:/admin/category/add";
     }
     @PostMapping("/company/add")
     public String addCompany(Company company, Model model){
@@ -85,10 +85,25 @@ public class AdminController {
         finally{
             model.addAttribute("message",message);
         }
-        return "redirect:/companies";
+        return "redirect:/admin/company/add";
     }
     @GetMapping("/company/add")
     public String addCompanyPage(){
         return "admin_company_add";
+    }
+    @GetMapping("/product/all")
+    public String allProductPage(Model model){
+        model.addAttribute("products",productService.getAll());
+        return "admin_products_all";
+    }
+    @GetMapping("/category/all")
+    public String allCategoryPage(Model model){
+        model.addAttribute("categories",categoryService.getAll());
+        return "admin_categories_all";
+    }
+    @GetMapping("/company/all")
+    public String allCompanyPage(Model model){
+        model.addAttribute("companies",companyService.getAll());
+        return "admin_companies_all";
     }
 }
