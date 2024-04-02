@@ -160,10 +160,6 @@
   padding: 50px;
   text-align: center;
 }
-.text-body-secondary {
-  --bs-text-opacity: 1;
-  color: #a6a6a6 !important;
-}
 .company-container{
   padding-top: 100px;
   padding-bottom: 100px;

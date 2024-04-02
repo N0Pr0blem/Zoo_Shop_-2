@@ -15,22 +15,49 @@
 <body>
 <header th:insert="blocks/header :: header"></header>
 <div class="container main">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <div class="col" th:each="product : ${products}">
-            <div class="card shadow-sm">
-                <div class="image-container">
-                <a class="card-image" href="#"><img class="bd-placeholder-img card-img-top" th:src="@{'/image/'+${product.image}}" alt="Image"></a>
+    <div class="redirectors">
+        <a class="redirector" th:href="@{/product/cat}"><img th:src="@{/image/kit.jpg}" alt=""></a>
+        <a class="redirector" th:href="@{/product/dog}"><img th:src="@{/image/zver.jpg}" alt=""></a>
+        <a class="redirector" th:href="@{/product/rodent}"><img th:src="@{/image/parot.jpg}" alt=""></a>
+        <a class="redirector" th:href="@{/product/parrot}"><img th:src="@{/image/kurva_homik.jpg}" alt=""></a>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Default checkbox
+                    </label>
                 </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Checked checkbox
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row col-md-9 row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col" th:each="product : ${products}">
+                <div class="card shadow-sm">
+                    <div class="image-container">
+                        <a class="card-image" href="#"><img class="bd-placeholder-img card-img-top"
+                                                            th:src="@{'/image/'+${product.image}}" alt="Image"></a>
+                    </div>
                     <div class="card-body">
-                    <h6 th:text="${product.name}"></h6>
-                    <p th:text="${product.price}"></p>
+                        <h6 th:text="${product.name}"></h6>
+                        <p th:text="${product.price}"></p>
+                    </div>
+                    <form th:action="@{'/admin/product/'+${product.id}+'/delete'}" method="post">
+                        <button class="btn btn-success" type="submit">delete</button>
+                    </form>
                 </div>
-                <form th:action="@{'/admin/product/'+${product.id}+'/delete'}" method="post">
-                    <button class="btn btn-success" type="submit">delete</button>
-                </form>
             </div>
         </div>
     </div>
 </div>
+<footer th:insert="blocks/footer :: footer" class="text-body-secondary py-5 bg-dark"></footer>
 </body>
 </html>

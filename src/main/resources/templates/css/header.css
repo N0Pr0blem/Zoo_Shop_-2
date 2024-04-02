@@ -22,3 +22,8 @@
 .nav-link:hover {
     color:   #8d21a6;
 }
+.text-body-secondary {
+    --bs-text-opacity: 1;
+    color: #a6a6a6 !important;
+    margin-top:50px;
+}
