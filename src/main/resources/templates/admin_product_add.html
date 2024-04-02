@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<html lang="ru" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-    <form th:action="@{/product/add}" method="post">
-        <h1>New product</h1>
-        <label>name</label>
+    <form th:action="@{/admin/product/add}" method="post">
+        <h1>Новый товар</h1>
+        <label>Название</label>
         <input type="text" name="name"><br>
-        <label>price</label>
+        <label>Цена</label>
         <input type="text" name="price"><br>
-        <label>discount</label>
+        <label>Скидка</label>
         <input type="text" name="discount"><br>
-        <label>type</label>
+        <label>Тип</label>
         <select name="type">
             <option value="none" selected>Выбор типа товара</option>
             <option th:each="enumm : ${T(org.example.model.ProductType).values()}"
@@ -21,7 +21,7 @@
                     th:value = "${enumm}">
             </option>
         </select><br>
-        <label>company</label>
+        <label>Компания</label>
         <select name="company">
             <option value="none" selected>Выбор названия компании</option>
             <option th:each="comp : ${companies}"
@@ -29,7 +29,7 @@
                     th:value = "${comp.id}">
             </option>
         </select><br>
-        <label>category</label>
+        <label>Категория</label>
         <select name="category">
             <option value="none" selected>Выбор названия категории</option>
             <option th:each="cat : ${categories}"
@@ -37,11 +37,11 @@
                     th:value = "${cat.id}">
             </option>
         </select><br>
-        <label>description</label>
+        <label>Описание</label>
         <input type="text" name="description"><br>
-        <label>count</label>
+        <label>Количество</label>
         <input type="text" name="count"><br>
-        <label>image</label>
+        <label>Картинка</label>
         <input type="file" name="image"><br>
         <button type="submit">Add</button>
     </form>

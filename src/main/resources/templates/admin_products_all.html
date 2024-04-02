@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Артикул</th>
+        <th>Название</th>
+        <th>Цена</th>
+        <th>Скидка</th>
+        <th>Тип</th>
+        <th>Компания</th>
+        <th>Категория</th>
+        <th>Описание</th>
+        <th>Количество</th>
+        <th>Картинка</th>
+    </tr>
+    <tr th:each="prod:${products}">
+        <td th:text="${prod.id}"></td>
+        <td th:text="${prod.name}"></td>
+        <td th:text="${prod.price}"></td>
+        <td th:text="${prod.discount}"></td>
+        <td th:text="${prod.type}"></td>
+        <td th:text="${prod.company}"></td>
+        <td th:text="${prod.category}"></td>
+        <td th:text="${prod.description}"></td>
+        <td th:text="${prod.count}"></td>
+        <td th:text="${prod.image}"></td>
+    </tr>
+</table>
+</body>
+</html>

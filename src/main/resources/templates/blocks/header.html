@@ -1,0 +1,46 @@
+<div th:fragment="header">
+    <nav class="navbar navbar-expand-md fixed-top bg-light ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">PetPlace</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="d-flex flex-row-reverse bd-highlight" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <span class="nav-link">+375299870296 </span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link"> 9:00-21:00 </span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/user/profile}">
+                            <svg width="18" height="17" viewBox="0 0 18 17" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="9" cy="6.5" r="5.5" stroke="#3E3E3E" stroke-width="2"></circle>
+                                <path d="M1 16.2255C2.78958 13.6706 5.75551 12 9.11162 12C12.3318 12 15.1927 13.5379 17 15.9194"
+                                      stroke="#3E3E3E"   stroke-width="2"></path>
+                            </svg>
+                            <span>Личный кабинет</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <svg width="18" height="21" viewBox="0 0 18 21" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.60107 6.81592H16.2024V16.0715C16.2024 17.7284 14.8592 19.0715 13.2024 19.0715H4.60108C2.94422 19.0715 1.60107 17.7284 1.60107 16.0715V6.81592Z"
+                                      stroke="#3E3E3E" stroke-width="2"></path>
+                                <path d="M12.9019 6.81592L12.9019 5.81592C12.9019 3.60678 11.111 1.81592 8.90186 1.81592V1.81592C6.69272 1.81592 4.90186 3.60678 4.90186 5.81592L4.90186 6.81592"
+                                      stroke="#3E3E3E" stroke-width="2"></path>
+                            </svg>
+                            <span>Корзина</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>

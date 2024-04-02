@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91ea0ac6-38f7-4a1b-93b5-2be433a22c7c" name="Changes" comment="Add categories for products and make crutch for uploading images ti minio">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/test.html" afterDir="false" />
+    <list default="true" id="91ea0ac6-38f7-4a1b-93b5-2be433a22c7c" name="Changes" comment="new slider">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user_profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/MinioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/MinioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blocks/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blocks/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/css/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/css/main_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/css/main_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/css/product_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/css/product_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/product.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +28,7 @@
         <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="CSS File" />
         <option value="HTML File" />
       </list>
     </option>
@@ -42,10 +50,35 @@
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;realization&quot;
+    &quot;git-widget-placeholder&quot;: &quot;next-try&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Code/Java/Storehouse/src/main/resources/templates/css&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Code\Java\Storehouse\src\main\resources\templates\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Code\Java\Storehouse\src\main\resources\templates" />
+    </key>
+  </component>
   <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Storehouse" />
       <method v="2">
@@ -59,6 +92,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -157,7 +195,79 @@
       <option name="project" value="LOCAL" />
       <updated>1710696352551</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add admin controller and base admin functions">
+      <option name="closed" value="true" />
+      <created>1710861633541</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1710861633541</updated>
+    </task>
+    <task id="LOCAL-00013" summary="промежуточный коммит перед добалением конфига">
+      <option name="closed" value="true" />
+      <created>1711381920294</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1711381920294</updated>
+    </task>
+    <task id="LOCAL-00014" summary="css connect success">
+      <option name="closed" value="true" />
+      <created>1711384607483</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1711384607483</updated>
+    </task>
+    <task id="LOCAL-00015" summary="insert main page">
+      <option name="closed" value="true" />
+      <created>1711385292932</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1711385292932</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Output of all models">
+      <option name="closed" value="true" />
+      <created>1711532960583</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1711532960583</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Add base user components">
+      <option name="closed" value="true" />
+      <created>1711536877697</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1711536877697</updated>
+    </task>
+    <task id="LOCAL-00018" summary="registration work">
+      <option name="closed" value="true" />
+      <created>1711539723598</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1711539723598</updated>
+    </task>
+    <task id="LOCAL-00019" summary="logining work">
+      <option name="closed" value="true" />
+      <created>1711543300412</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1711543300412</updated>
+    </task>
+    <task id="LOCAL-00020" summary="new slider">
+      <option name="closed" value="true" />
+      <created>1711556266785</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1711556266785</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -172,6 +282,15 @@
     <MESSAGE value="base functions with products" />
     <MESSAGE value="Minio uploading files WORK!!!!!" />
     <MESSAGE value="Add categories for products and make crutch for uploading images ti minio" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add categories for products and make crutch for uploading images ti minio" />
+    <MESSAGE value="add admin controller and base admin functions" />
+    <MESSAGE value="промежуточный коммит перед добалением конфига" />
+    <MESSAGE value="css connect success" />
+    <MESSAGE value="insert main page" />
+    <MESSAGE value="Output of all models" />
+    <MESSAGE value="Add base user components" />
+    <MESSAGE value="registration work" />
+    <MESSAGE value="logining work" />
+    <MESSAGE value="new slider" />
+    <option name="LAST_COMMIT_MESSAGE" value="new slider" />
   </component>
 </project>
