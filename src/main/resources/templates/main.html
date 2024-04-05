@@ -78,9 +78,12 @@
                 <a href="#"><img th:src="@{image/benek.jpg}" alt=""></a>
             </div>
         </div>
+        <div th:insert="blocks/redirector::redirector">
+
+        </div>
     </div>
-</main>
-<footer th:insert="blocks/footer :: footer" class="text-body-secondary py-5 bg-dark"></footer>
+    </main>
+    <footer th:insert="blocks/footer :: footer" class="text-body-secondary py-5 bg-dark"></footer>
 <script
         src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

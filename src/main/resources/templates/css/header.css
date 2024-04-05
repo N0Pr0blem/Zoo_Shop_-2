@@ -27,3 +27,13 @@
     color: #a6a6a6 !important;
     margin-top:50px;
 }
+.main{
+    padding-top:100px;
+    position:relative;
+}
+.card{
+    padding:15px;
+}
+.row-cols-4 > * {
+    width: 100%;
+}

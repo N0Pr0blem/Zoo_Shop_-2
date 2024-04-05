@@ -1,0 +1,58 @@
+<div th:fragment="redirector" class="img-container-1">
+    <h1 class="redirector-text">Кто твой питомец?</h1>
+    <div class="container">
+        <div class="img-container-2">
+            <div class="row row-cols-4 g-2">
+                <a class="col redirector" href="product/cat" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop1"
+                   aria-controls="offcanvasTop1"><img th:src="@{image/kit.jpg}" alt=""></a>
+                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop1"
+                     aria-labelledby="offcanvasTopLabel1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasTopLabel1">Кот</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Закрыть"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        1
+                    </div>
+                </div>
+                <a class="col redirector" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop2" aria-controls="offcanvasTop2" href="product/dog"><img th:src="@{image/zver.jpg}" alt=""></a>
+                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop2"
+                     aria-labelledby="offcanvasTopLabel2">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasTopLabel2">Собака</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Закрыть"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        2
+                    </div>
+                </div>
+                <a class="col redirector" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop3" aria-controls="offcanvasTop3" href="product/rodent"><img th:src="@{image/parot.jpg}" alt=""></a>
+                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop3"
+                     aria-labelledby="offcanvasTopLabel3">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasTopLabel3">Попугай</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Закрыть"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        3
+                    </div>
+                </div>
+                <a class="col redirector" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop4" aria-controls="offcanvasTop4" href="product/parrot"><img th:src="@{image/kurva_homik.jpg}" alt=""></a>
+                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop4"
+                     aria-labelledby="offcanvasTopLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasTopLabel4">Грызун</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Закрыть"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        4
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

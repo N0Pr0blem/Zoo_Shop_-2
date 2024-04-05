@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91ea0ac6-38f7-4a1b-93b5-2be433a22c7c" name="Changes" comment="new slider">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user_profile.html" afterDir="false" />
+    <list default="true" id="91ea0ac6-38f7-4a1b-93b5-2be433a22c7c" name="Changes" comment="product page beautifully">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/blocks/redirector.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blocks/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blocks/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_product_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_product_add.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/css/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/css/main_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/css/main_style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/css/product_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/css/product_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,7 +262,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711556266785</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="product page beautifully">
+      <option name="closed" value="true" />
+      <created>1712076815628</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1712076815628</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -291,6 +294,7 @@
     <MESSAGE value="registration work" />
     <MESSAGE value="logining work" />
     <MESSAGE value="new slider" />
-    <option name="LAST_COMMIT_MESSAGE" value="new slider" />
+    <MESSAGE value="product page beautifully" />
+    <option name="LAST_COMMIT_MESSAGE" value="product page beautifully" />
   </component>
 </project>
