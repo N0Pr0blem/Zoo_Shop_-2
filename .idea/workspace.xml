@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91ea0ac6-38f7-4a1b-93b5-2be433a22c7c" name="Changes" comment="offcanvas has categories links">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_categories_all.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_categories_all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_category_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_category_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_companies_all.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_companies_all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_company_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_company_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_products_all.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_products_all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/adminka.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/adminka.html" afterDir="false" />
-    </list>
+    <list default="true" id="91ea0ac6-38f7-4a1b-93b5-2be433a22c7c" name="Changes" comment="beautiful admin panel" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -297,7 +289,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712431053252</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="beautiful admin panel">
+      <option name="closed" value="true" />
+      <created>1712431748352</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1712431748352</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -325,6 +325,7 @@
     <MESSAGE value="offcanvas for redirector" />
     <MESSAGE value="categories have their own product's type" />
     <MESSAGE value="offcanvas has categories links" />
-    <option name="LAST_COMMIT_MESSAGE" value="offcanvas has categories links" />
+    <MESSAGE value="beautiful admin panel" />
+    <option name="LAST_COMMIT_MESSAGE" value="beautiful admin panel" />
   </component>
 </project>

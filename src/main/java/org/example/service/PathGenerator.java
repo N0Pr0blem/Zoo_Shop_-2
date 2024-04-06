@@ -9,6 +9,6 @@ public class PathGenerator {
     public String rusToLatin(String rus){
         Transliterator latin = Transliterator.getInstance(CYRILLIC_TO_LATIN);
         String result = latin.transliterate(rus);
-        return result.replace(' ','_');
+        return result.replace(' ','_').toLowerCase();
     }
 }
