@@ -15,6 +15,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/admin")
@@ -72,8 +74,8 @@ public class AdminController {
     }
 
     @PostMapping("/category/add")
-    public String addCategory(Category category){
-        categoryService.add(category);
+    public String addCategory(@RequestParam String name, @RequestParam("productTypes") List<String> selectedProductTypes){
+        categoryService.add(name,selectedProductTypes);
         return "redirect:/admin/category/add";
     }
     @PostMapping("/company/add")

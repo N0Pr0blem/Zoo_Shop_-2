@@ -14,15 +14,6 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
-    @GetMapping("/add")
-    public String addCategoryPage(){
-        return "category_add";
-    }
 
-    @PostMapping("/add")
-    public String addCategory(Category category){
-        categoryService.add(category);
-        return "redirect:/";
-    }
 
 }
