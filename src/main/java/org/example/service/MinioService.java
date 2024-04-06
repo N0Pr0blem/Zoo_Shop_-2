@@ -25,6 +25,8 @@ public class MinioService {
     private MinioClient minioClient;
     @Value("${minio.bucket-name}")
     private String bucketName;
+    @Value("${minio.url}")
+    private String minioUrl;
     Logger logger = LogManager.getLogger(CompanyService.class);
 
     public void uploadFileToMinIO(File file) {
@@ -67,5 +69,9 @@ public class MinioService {
     }
     public String test(){
         return "hello";
+    }
+
+    public String getMinioUrl() {
+        return minioUrl;
     }
 }

@@ -15,15 +15,7 @@
 <header th:insert="blocks/header :: header"></header>
 <div class="container main">
     <div class="row">
-        <div class="col-md-3">
-            <h4><a th:href="@{/admin/product/all}">Все продукты</a></h4><br>
-            <h4><a th:href="@{/admin/category/all}">Все категории</a></h4><br>
-            <h4><a th:href="@{/admin/company/all}">Все кампании</a></h4><br>
-            <h4><a th:href="@{/admin/product/add}">Добавить продукт</a></h4><br>
-            <h4><a th:href="@{/admin/category/add}">Добавить категорию</a></h4><br>
-            <h4><a th:href="@{/admin/company/add}">Добавить кампанию</a></h4><br>
-            <h4><a th:href="${minioUrl}" target="_blank">Перейти к облаку</a></h4><br>
-        </div>
+        <div class="col-md-3" th:insert="blocks/admin_panel::admin_panel"> </div>
         <div class="col-md-9">
             <div class="card">
                 <form th:action="@{/admin/product/add}" method="post">

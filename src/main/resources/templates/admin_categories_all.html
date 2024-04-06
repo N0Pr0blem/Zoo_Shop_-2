@@ -9,10 +9,16 @@
     <tr>
         <th>Артикул</th>
         <th>Название</th>
+        <th>Путь</th>
+        <th>Типы</th>
     </tr>
     <tr th:each="cat:${categories}">
         <td th:text="${cat.id}"></td>
         <td th:text="${cat.name}"></td>
+        <td th:text="${cat.path}"></td>
+        <td th:each="type : ${cat.productTypes}">
+            <span th:text="${type}"></span>
+        </td>
     </tr>
 </table>
 </body>

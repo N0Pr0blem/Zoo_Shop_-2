@@ -33,4 +33,14 @@ public class CategoryService {
     public ArrayList<Category> getAll() {
         return (ArrayList<Category>) categoryRepository.findAll();
     }
+
+    public List<Category> findByType(ProductType productType) {
+        List<Category> allCategories = categoryRepository.findAll();
+        List<Category> categoriesWithProductType = new ArrayList<>();
+        for(Category category:allCategories){
+            if(category.getProductTypes().contains(productType))
+                categoriesWithProductType.add(category);
+        }
+        return categoriesWithProductType;
+    }
 }

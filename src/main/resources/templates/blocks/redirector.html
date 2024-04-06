@@ -13,7 +13,9 @@
                                 aria-label="Закрыть"></button>
                     </div>
                     <div class="offcanvas-body">
-                        1
+                        <div th:each="cat:${catCategories}">
+                            <a th:href="'/product/cat/'+${cat.path}" th:text="${cat.name}"></a>
+                        </div>
                     </div>
                 </div>
                 <a class="col redirector" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop2" aria-controls="offcanvasTop2" href="product/dog"><img th:src="@{image/zver.jpg}" alt=""></a>
@@ -25,7 +27,9 @@
                                 aria-label="Закрыть"></button>
                     </div>
                     <div class="offcanvas-body">
-                        2
+                        <div th:each="cat:${dogCategories}">
+                            <a th:href="'/product/dog/'+${cat.path}" th:text="${cat.name}"></a>
+                        </div>
                     </div>
                 </div>
                 <a class="col redirector" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop3" aria-controls="offcanvasTop3" href="product/rodent"><img th:src="@{image/parot.jpg}" alt=""></a>
@@ -37,7 +41,9 @@
                                 aria-label="Закрыть"></button>
                     </div>
                     <div class="offcanvas-body">
-                        3
+                        <div th:each="cat:${parrotCategories}">
+                            <a th:href="'/product/parrot/'+${cat.path}" th:text="${cat.name}"></a>
+                        </div>
                     </div>
                 </div>
                 <a class="col redirector" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop4" aria-controls="offcanvasTop4" href="product/parrot"><img th:src="@{image/kurva_homik.jpg}" alt=""></a>
@@ -49,7 +55,9 @@
                                 aria-label="Закрыть"></button>
                     </div>
                     <div class="offcanvas-body">
-                        4
+                        <div th:each="cat:${rodentCategories}">
+                            <a th:href="'/product/rodent/'+${cat.path}" th:text="${cat.name}"></a>
+                        </div>
                     </div>
                 </div>
             </div>
