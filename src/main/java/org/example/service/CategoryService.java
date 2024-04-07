@@ -43,4 +43,19 @@ public class CategoryService {
         }
         return categoriesWithProductType;
     }
+
+    public void delete(Category category) {
+        categoryRepository.delete(category);
+    }
+
+    public void edit(Category category, String name, List<String> selectedProductTypes) {
+        category.setName(name);
+        Set<ProductType> productTypes = selectedProductTypes
+                .stream()
+                .map(ProductType::valueOf)
+                .collect(Collectors.toSet());
+        category.setProductTypes(productTypes);
+        category.regeneratePath();
+        categoryRepository.save(category);
+    }
 }

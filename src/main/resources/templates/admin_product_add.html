@@ -10,13 +10,14 @@
             crossorigin="anonymous"
     />
     <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/admin_style.css}"/>
 </head>
 <body>
 <header th:insert="blocks/header :: header"></header>
 <div class="container main">
     <div class="row">
-        <div class="col-md-3" th:insert="blocks/admin_panel::admin_panel"> </div>
-        <div class="col-md-9">
+        <div class="col-md-2" th:insert="blocks/admin_panel::admin_panel"> </div>
+        <div class="col-md-10">
             <div class="card">
                 <form th:action="@{/admin/product/add}" method="post">
                     <h1>Новый товар</h1>
@@ -52,7 +53,7 @@
                     </select><br>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Описание</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="discount"></textarea>
                     </div>
                     <label>Количество</label>
                     <input type="text" name="count"><br>

@@ -64,7 +64,6 @@ public class AdminController {
         productService.delete(product);
         return "redirect:/product";
     }
-//minioUrl
     @GetMapping("/category/add")
     public String addCategoryPage(Model model){
         model.addAttribute("minioUrl",minioService.getMinioUrl());

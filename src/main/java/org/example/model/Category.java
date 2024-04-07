@@ -32,4 +32,8 @@ public class Category {
         this.name = name;
         this.path = new PathGenerator().rusToLatin(name);
     }
+
+    public void regeneratePath() {
+        path = new PathGenerator().rusToLatin(name);
+    }
 }

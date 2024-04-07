@@ -10,13 +10,14 @@
             crossorigin="anonymous"
     />
     <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/admin_style.css}"/>
 </head>
 <body>
 <header th:insert="blocks/header :: header"></header>
 <div class="container main">
     <div class="row">
-        <div class="col-md-3" th:insert="blocks/admin_panel::admin_panel"> </div>
-        <div class="col-md-9">
+        <div class="col-md-2" th:insert="blocks/admin_panel::admin_panel"> </div>
+        <div class="col-md-10">
             <div class="card">
                 <table>
                     <tr>
@@ -37,11 +38,11 @@
                         <td th:text="${prod.price}"></td>
                         <td th:text="${prod.discount}"></td>
                         <td th:text="${prod.type}"></td>
-                        <td th:text="${prod.company}"></td>
-                        <td th:text="${prod.category}"></td>
+                        <td th:text="${prod.company.name}"></td>
+                        <td th:text="${prod.category.name}"></td>
                         <td th:text="${prod.description}"></td>
                         <td th:text="${prod.count}"></td>
-                        <td th:text="${prod.image}"></td>
+                        <td><a th:href="@{'/image/'+${prod.image}}" th:text="${prod.image}"></a></td>
                     </tr>
                 </table>
             </div>
