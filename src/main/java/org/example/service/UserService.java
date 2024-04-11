@@ -1,5 +1,6 @@
 package org.example.service;
 
+import org.example.model.Cheque;
 import org.example.model.Role;
 import org.example.model.User;
 import org.example.repos.UserRepository;
@@ -9,8 +10,10 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 @Service
 public class UserService implements UserDetailsService {
@@ -36,5 +39,21 @@ public class UserService implements UserDetailsService {
 
     public User getUser(String name) {
         return userRepository.findByUsername(name);
+    }
+
+    public void makeAdmin(User user) {
+        User userFromDb = userRepository.findByUsername(user.getUsername());
+        if(!userFromDb.getRoles().contains(Role.ADMIN)){
+            userRepository.save(userFromDb.addRole(Role.ADMIN));
+        }
+    }
+
+    public void makeUser(User user) {
+        User userFromDb = userRepository.findByUsername(user.getUsername());
+        if(userFromDb.getRoles().contains(Role.ADMIN)){
+            userFromDb.getRoles().clear();
+            userFromDb.getRoles().add(Role.USER);
+            userRepository.save(userFromDb);
+        }
     }
 }

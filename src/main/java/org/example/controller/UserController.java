@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import org.example.model.Cheque;
 import org.example.model.User;
 import org.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.security.Principal;
+import java.util.List;
+import java.util.Set;
 
 @PreAuthorize("hasAuthority('USER')")
 @RequestMapping("/user")
@@ -18,6 +21,8 @@ import java.security.Principal;
 public class UserController {
     @Autowired
     UserService userService;
+    @Autowired
+    ChequeService chequeService;
 
     @GetMapping("/add")
     public String addUserPage(){
@@ -34,4 +39,12 @@ public class UserController {
         model.addAttribute("user",user);
         return "user_profile";
     }
+    @GetMapping("/history")
+    public String userHistoryPage(Principal principal, Model model){
+        User user = userService.getUser(principal.getName());
+        List<Cheque> сheques = chequeService.getAllChequesUser(user);
+        model.addAttribute("сheques",сheques);
+        return "user_сheque";
+    }
+
 }

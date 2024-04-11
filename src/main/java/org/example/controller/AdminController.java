@@ -3,10 +3,8 @@ package org.example.controller;
 import org.example.model.Category;
 import org.example.model.Company;
 import org.example.model.Product;
-import org.example.service.CategoryService;
-import org.example.service.CompanyService;
-import org.example.service.MinioService;
-import org.example.service.ProductService;
+import org.example.model.User;
+import org.example.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -28,6 +26,8 @@ public class AdminController {
     CompanyService companyService;
     @Autowired
     CategoryService categoryService;
+    @Autowired
+    UserService userService;
     @Autowired
     MinioService minioService;
 
@@ -115,5 +115,20 @@ public class AdminController {
     public String deleteCategory(@PathVariable Company company){
         companyService.delete(company);
         return "redirect:/admin/company/all";
+    }
+    @GetMapping("/users")
+    public String getAllUsersPage(Model model){
+        model.addAttribute("users",userService.getAllUsers());
+        return "admin_all_users";
+    }
+    @PostMapping("/users/{user}/makeAdmin")
+    public String makeAdmin(@PathVariable User user){
+        userService.makeAdmin(user);
+        return "redirect:/admin/users";
+    }
+    @PostMapping("/users/{user}/makeUser")
+    public String makeUser(@PathVariable User user){
+        userService.makeUser(user);
+        return "redirect:/admin/users";
     }
 }
