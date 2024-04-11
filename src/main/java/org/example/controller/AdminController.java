@@ -111,4 +111,9 @@ public class AdminController {
         model.addAttribute("minioUrl",minioService.getMinioUrl());
         return "admin_companies_all";
     }
+    @PostMapping("/company/{company}/delete")
+    public String deleteCategory(@PathVariable Company company){
+        companyService.delete(company);
+        return "redirect:/admin/company/all";
+    }
 }
