@@ -3,47 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/admin_style.css}"/>
 </head>
 <body>
-    <form th:action="@{/admin/product/add}" method="post">
-        <h1>Новый товар</h1>
-        <label>Название</label>
-        <input type="text" name="name"><br>
-        <label>Цена</label>
-        <input type="text" name="price"><br>
-        <label>Скидка</label>
-        <input type="text" name="discount"><br>
-        <label>Тип</label>
-        <select name="type">
-            <option value="none" selected>Выбор типа товара</option>
-            <option th:each="enumm : ${T(org.example.model.ProductType).values()}"
-                    th:text="${enumm}"
-                    th:value = "${enumm}">
-            </option>
-        </select><br>
-        <label>Компания</label>
-        <select name="company">
-            <option value="none" selected>Выбор названия компании</option>
-            <option th:each="comp : ${companies}"
-                    th:text="${comp.name}"
-                    th:value = "${comp.id}">
-            </option>
-        </select><br>
-        <label>Категория</label>
-        <select name="category">
-            <option value="none" selected>Выбор названия категории</option>
-            <option th:each="cat : ${categories}"
-                    th:text="${cat.name}"
-                    th:value = "${cat.id}">
-            </option>
-        </select><br>
-        <label>Описание</label>
-        <input type="text" name="description"><br>
-        <label>Количество</label>
-        <input type="text" name="count"><br>
-        <label>Картинка</label>
-        <input type="file" name="image"><br>
-        <button type="submit">Add</button>
-    </form>
+<header th:insert="blocks/header :: header"></header>
+<div class="container main">
+    <div class="row">
+        <div class="col-md-2" th:insert="blocks/admin_panel::admin_panel"> </div>
+        <div class="col-md-10">
+            <div class="card">
+                <form th:action="@{/admin/product/add}" method="post">
+                    <h1>Новый товар</h1>
+                    <label>Название</label>
+                    <input type="text" name="name"><br>
+                    <label>Цена</label>
+                    <input type="text" name="price"><br>
+                    <label>Скидка</label>
+                    <input type="text" name="discount"><br>
+                    <label>Тип</label>
+                    <select name="type">
+                        <option value="none" selected>Выбор типа товара</option>
+                        <option th:each="enumm : ${T(org.example.model.ProductType).values()}"
+                                th:text="${enumm}"
+                                th:value="${enumm}">
+                        </option>
+                    </select><br>
+                    <label>Компания</label>
+                    <select name="company">
+                        <option value="none" selected>Выбор названия компании</option>
+                        <option th:each="comp : ${companies}"
+                                th:text="${comp.name}"
+                                th:value="${comp.id}">
+                        </option>
+                    </select><br>
+                    <label>Категория</label>
+                    <select name="category">
+                        <option value="none" selected>Выбор названия категории</option>
+                        <option th:each="cat : ${categories}"
+                                th:text="${cat.name}"
+                                th:value="${cat.id}">
+                        </option>
+                    </select><br>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Описание</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="discount"></textarea>
+                    </div>
+                    <label>Количество</label>
+                    <input type="text" name="count"><br>
+                    <label>Картинка</label>
+                    <input type="file" name="image"><br>
+                    <button class="btn btn-success" type="submit">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:insert="blocks/footer :: footer" class="text-body-secondary py-5 bg-dark"></footer>
 </body>
 </html>

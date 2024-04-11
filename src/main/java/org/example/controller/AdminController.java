@@ -15,6 +15,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/admin")
@@ -29,12 +31,9 @@ public class AdminController {
     @Autowired
     MinioService minioService;
 
-    @Value("${minio.url}")
-    private String minioUrl;
-
     @GetMapping()
     public String getAdminPage(Model model){
-        model.addAttribute("minioUrl",minioUrl);
+        model.addAttribute("minioUrl",minioService.getMinioUrl());
         return "adminka";
     }
 
@@ -42,6 +41,7 @@ public class AdminController {
     public String addProductPage(Model model) {
         model.addAttribute("companies", companyService.getAll());
         model.addAttribute("categories", categoryService.getAll());
+        model.addAttribute("minioUrl",minioService.getMinioUrl());
         return "admin_product_add";
     }
 
@@ -51,7 +51,6 @@ public class AdminController {
             product.setImage(image.getPath());
             minioService.uploadFileToMinIO(image);
             productService.addProduct(product);
-            model.addAttribute("message", "Success");
 
         } catch (Exception ex) {
             model.addAttribute("message", ex.toString());
@@ -65,15 +64,15 @@ public class AdminController {
         productService.delete(product);
         return "redirect:/product";
     }
-
     @GetMapping("/category/add")
-    public String addCategoryPage(){
+    public String addCategoryPage(Model model){
+        model.addAttribute("minioUrl",minioService.getMinioUrl());
         return "admin_category_add";
     }
 
     @PostMapping("/category/add")
-    public String addCategory(Category category){
-        categoryService.add(category);
+    public String addCategory(@RequestParam String name, @RequestParam("productTypes") List<String> selectedProductTypes){
+        categoryService.add(name,selectedProductTypes);
         return "redirect:/admin/category/add";
     }
     @PostMapping("/company/add")
@@ -90,22 +89,31 @@ public class AdminController {
         return "redirect:/admin/company/add";
     }
     @GetMapping("/company/add")
-    public String addCompanyPage(){
+    public String addCompanyPage(Model model){
+        model.addAttribute("minioUrl",minioService.getMinioUrl());
         return "admin_company_add";
     }
     @GetMapping("/product/all")
     public String allProductPage(Model model){
         model.addAttribute("products",productService.getAll());
+        model.addAttribute("minioUrl",minioService.getMinioUrl());
         return "admin_products_all";
     }
     @GetMapping("/category/all")
     public String allCategoryPage(Model model){
         model.addAttribute("categories",categoryService.getAll());
+        model.addAttribute("minioUrl",minioService.getMinioUrl());
         return "admin_categories_all";
     }
     @GetMapping("/company/all")
     public String allCompanyPage(Model model){
         model.addAttribute("companies",companyService.getAll());
+        model.addAttribute("minioUrl",minioService.getMinioUrl());
         return "admin_companies_all";
+    }
+    @PostMapping("/company/{company}/delete")
+    public String deleteCategory(@PathVariable Company company){
+        companyService.delete(company);
+        return "redirect:/admin/company/all";
     }
 }
