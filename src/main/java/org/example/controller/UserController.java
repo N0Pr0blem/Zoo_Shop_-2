@@ -46,5 +46,9 @@ public class UserController {
         model.addAttribute("сheques",сheques);
         return "user_сheque";
     }
+    @GetMapping("/demo")
+    public String userDemoPage(){
+        return "registration_demo";
+    }
 
 }

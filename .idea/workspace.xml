@@ -4,22 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91ea0ac6-38f7-4a1b-93b5-2be433a22c7c" name="Changes" comment="Create repos for new entities">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ChequeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_all_users.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/blocks/user_panel.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/css/user_style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user_сheque.html" afterDir="false" />
+    <list default="true" id="91ea0ac6-38f7-4a1b-93b5-2be433a22c7c" name="Changes" comment="I can give admin access. Beautiful profile.">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/css/login_style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/css/registration_style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/registration_demo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Buy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Cheque.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repos/BuyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repos/ChequeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blocks/admin_panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blocks/admin_panel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_product_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_product_add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,9 +26,9 @@
         <option value="Enum" />
         <option value="JavaScript File" />
         <option value="Interface" />
-        <option value="CSS File" />
         <option value="Class" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -50,19 +44,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "profile",
-    "last_opened_file_path": "D:/Code/Java/Storehouse/src/main/resources/templates/css",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;profile&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Code/Java/Storehouse/src/main/resources/templates/css&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.example.controller" />
@@ -340,11 +334,18 @@
       <option name="project" value="LOCAL" />
       <updated>1712859723084</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="I can give admin access. Beautiful profile.">
+      <option name="closed" value="true" />
+      <created>1712874330333</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1712874330333</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="create repos and set settings for connection with DB" />
     <MESSAGE value="first runnable version" />
     <MESSAGE value="workable repository" />
     <MESSAGE value="add empty constructors" />
@@ -369,6 +370,7 @@
     <MESSAGE value="Path generator to Lower case link" />
     <MESSAGE value="category editor, deletor and saver" />
     <MESSAGE value="Create repos for new entities" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create repos for new entities" />
+    <MESSAGE value="I can give admin access. Beautiful profile." />
+    <option name="LAST_COMMIT_MESSAGE" value="I can give admin access. Beautiful profile." />
   </component>
 </project>

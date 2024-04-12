@@ -46,10 +46,15 @@ public class AdminController {
     }
 
     @PostMapping("/product/add")
-    public String addProduct(Product product, @RequestParam File image, Model model) {
+    public String addProduct(Product product, @RequestParam File image, @RequestParam String imageName, Model model) {
         try {
-            product.setImage(image.getPath());
-            minioService.uploadFileToMinIO(image);
+            if(imageName.isEmpty()){
+                product.setImage(image.getPath());
+                minioService.uploadFileToMinIO(image);
+            }
+            else{
+                product.setImage(imageName);
+            }
             productService.addProduct(product);
 
         } catch (Exception ex) {
