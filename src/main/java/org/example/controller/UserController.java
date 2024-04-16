@@ -50,5 +50,9 @@ public class UserController {
     public String userDemoPage(){
         return "registration_demo";
     }
-
+    @GetMapping("/cart")
+    public String userCartPage(Principal principal, Model model){
+        model.addAttribute("cartProducts",userService.getUser(principal.getName()).getProduct());
+        return "user_cart";
+    }
 }

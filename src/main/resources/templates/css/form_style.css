@@ -32,3 +32,12 @@ body {
     background-color:  #8d21a6;
     border-color:  #8d21a6;
 }
+a{
+    color: #8d21a6 !important;
+}
+a:hover {
+    color:  #b773c6 !important;
+}
+.link-back{
+    text-decoration:none;
+}
