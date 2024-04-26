@@ -13,12 +13,15 @@
                                 aria-label="Закрыть"></button>
                     </div>
                     <div class="offcanvas-body">
-                        <div th:each="cat:${catCategories}">
-                            <a th:href="'/product/cat/'+${cat.path}" th:text="${cat.name}"></a>
+                        <div class="row col-md-9 row-cols-sm-1 row-cols-sm-2 row-cols-sm-3 row-cols-sm-4 g-4">
+                            <div th:each="cat:${catCategories}">
+                                <a th:href="'/product/cat/'+${cat.path}" th:text="${cat.name}"></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <a class="col redirector" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop2" aria-controls="offcanvasTop2" href="product/dog"><img th:src="@{image/zver.jpg}" alt=""></a>
+                <a class="col redirector" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop2"
+                   aria-controls="offcanvasTop2" href="product/dog"><img th:src="@{image/zver.jpg}" alt=""></a>
                 <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop2"
                      aria-labelledby="offcanvasTopLabel2">
                     <div class="offcanvas-header">
@@ -27,12 +30,15 @@
                                 aria-label="Закрыть"></button>
                     </div>
                     <div class="offcanvas-body">
-                        <div th:each="cat:${dogCategories}">
-                            <a th:href="'/product/dog/'+${cat.path}" th:text="${cat.name}"></a>
+                        <div class="row col-md-9 row-cols-sm-1 row-cols-sm-2 row-cols-sm-3 row-cols-sm-4 g-4">
+                            <div th:each="cat:${dogCategories}">
+                                <a th:href="'/product/dog/'+${cat.path}" th:text="${cat.name}"></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <a class="col redirector" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop3" aria-controls="offcanvasTop3" href="product/rodent"><img th:src="@{image/parot.jpg}" alt=""></a>
+                <a class="col redirector" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop3"
+                   aria-controls="offcanvasTop3" href="product/rodent"><img th:src="@{image/parot.jpg}" alt=""></a>
                 <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop3"
                      aria-labelledby="offcanvasTopLabel3">
                     <div class="offcanvas-header">
@@ -41,12 +47,16 @@
                                 aria-label="Закрыть"></button>
                     </div>
                     <div class="offcanvas-body">
-                        <div th:each="cat:${parrotCategories}">
-                            <a th:href="'/product/parrot/'+${cat.path}" th:text="${cat.name}"></a>
+                        <div class="row col-md-9 row-cols-sm-1 row-cols-sm-2 row-cols-sm-3 row-cols-sm-4 g-4">
+                            <div th:each="cat:${parrotCategories}">
+                                <a th:href="'/product/parrot/'+${cat.path}" th:text="${cat.name}"></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <a class="col redirector" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop4" aria-controls="offcanvasTop4" href="product/parrot"><img th:src="@{image/kurva_homik.jpg}" alt=""></a>
+                <a class="col redirector" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop4"
+                   aria-controls="offcanvasTop4" href="product/parrot"><img th:src="@{image/kurva_homik.jpg}"
+                                                                            alt=""></a>
                 <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop4"
                      aria-labelledby="offcanvasTopLabel">
                     <div class="offcanvas-header">
@@ -55,8 +65,10 @@
                                 aria-label="Закрыть"></button>
                     </div>
                     <div class="offcanvas-body">
-                        <div th:each="cat:${rodentCategories}">
-                            <a th:href="'/product/rodent/'+${cat.path}" th:text="${cat.name}"></a>
+                        <div class="row col-md-9 row-cols-sm-1 row-cols-sm-2 row-cols-sm-3 row-cols-sm-4 g-4">
+                            <div th:each="cat:${rodentCategories}">
+                                <a th:href="'/product/rodent/'+${cat.path}" th:text="${cat.name}"></a>
+                            </div>
                         </div>
                     </div>
                 </div>
