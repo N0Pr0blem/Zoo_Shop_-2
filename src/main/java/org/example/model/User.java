@@ -2,12 +2,11 @@ package org.example.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
-import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.servlet.handler.UserRoleAuthorizationInterceptor;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -28,7 +27,7 @@ import java.util.Set;
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "address_id")
     )
-    private Set<Address> address;
+    private List<Address> addresses;
 
     @ManyToMany
     @JoinTable(
@@ -36,7 +35,7 @@ import java.util.Set;
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id")
     )
-    Set<Product> product;
+    private List<Product> products;
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
@@ -100,13 +99,13 @@ import java.util.Set;
       return this;
    }
 
-   public User setAddress(Set<Address> address) {
-      this.address = address;
+   public User setAddresses(List<Address> addresses) {
+      this.addresses = addresses;
       return this;
    }
 
-   public User setProduct(Set<Product> product) {
-      this.product = product;
+   public User setProducts(List<Product> products) {
+      this.products = products;
       return this;
    }
 
@@ -117,4 +116,9 @@ import java.util.Set;
       roles.add(role);
       return this;
    }
+
+    public void addAddress(Address address) {
+        this.addresses.add(address);
+
+    }
 }

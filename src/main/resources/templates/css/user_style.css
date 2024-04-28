@@ -6,3 +6,9 @@
     min-height: 600px;
     padding:10px;
 }
+.card .card-address{
+    padding:10px;
+    display: flex;
+    justify-content: space-between;
+
+}

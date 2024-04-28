@@ -51,7 +51,7 @@
                         <td th:text="${prod.company.name}"></td>
                         <td th:text="${prod.category.name}"></td>
                         <td th:text="${prod.count}"></td>
-                        <td><a th:href="@{'/image/'+${prod.image}}" th:text="${prod.image}"></a></td>
+                        <td><a class="link-column" th:href="@{'/image/'+${prod.image}}" th:text="${prod.image}"></a></td>
                         <td>
                             <div class="form-container">
                                 <form th:action="@{'/admin/product/'+${prod.id}+'/edit'}" method="get">

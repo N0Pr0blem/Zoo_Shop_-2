@@ -18,9 +18,10 @@ public class Address {
     private int houseNumber;
     private int flatNumber;
 
-    public Address(String city, String street, int house_number, int flat_number) {
+    public Address(String city, String street,String corps, int house_number, int flat_number) {
         this.city = city;
         this.street = street;
+        this.corps = corps;
         this.houseNumber = house_number;
         this.flatNumber = flat_number;
     }

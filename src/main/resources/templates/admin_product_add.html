@@ -41,24 +41,21 @@
                     <label>Скидка</label>
                     <input type="text" name="discount"><br>
                     <label>Тип</label>
-                    <select name="type">
-                        <option value="none" selected>Выбор типа товара</option>
+                    <select name="type" class="form-select" aria-label="Выбор типа товара">
                         <option th:each="enumm : ${T(org.example.model.ProductType).values()}"
                                 th:text="${enumm}"
                                 th:value="${enumm}">
                         </option>
                     </select><br>
                     <label>Компания</label>
-                    <select name="company">
-                        <option value="none" selected>Выбор названия компании</option>
+                    <select name="company" class="form-select" aria-label="Выбор названия компании">
                         <option th:each="comp : ${companies}"
                                 th:text="${comp.name}"
                                 th:value="${comp.id}">
                         </option>
                     </select><br>
                     <label>Категория</label>
-                    <select name="category">
-                        <option value="none" selected>Выбор названия категории</option>
+                    <select name="category" class="form-select" aria-label="Выбор названия категории">
                         <option th:each="cat : ${categories}"
                                 th:text="${cat.name}"
                                 th:value="${cat.id}">

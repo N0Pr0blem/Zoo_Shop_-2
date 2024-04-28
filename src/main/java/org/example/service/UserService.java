@@ -1,8 +1,10 @@
 package org.example.service;
 
+import org.example.model.Address;
 import org.example.model.Cheque;
 import org.example.model.Role;
 import org.example.model.User;
+import org.example.repos.AddressRepository;
 import org.example.repos.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,6 +21,8 @@ import java.util.List;
 public class UserService implements UserDetailsService {
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private AddressRepository addressRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -55,5 +59,20 @@ public class UserService implements UserDetailsService {
             userFromDb.getRoles().add(Role.USER);
             userRepository.save(userFromDb);
         }
+    }
+
+    public void addAddress(Principal principal, String city, String street, String corps, String houseNumber, String flatNumber) {
+        User user = userRepository.findByUsername(principal.getName());
+        Address address = new Address(city,street,corps, Integer.parseInt(houseNumber),Integer.parseInt(flatNumber));
+        addressRepository.save(address);
+        user.addAddress(address);
+        userRepository.save(user);
+    }
+
+    public void deleteAddress(Principal principal, Address address) {
+        User user = userRepository.findByUsername(principal.getName());
+        user.getAddresses().remove(address);
+        userRepository.save(user);
+        addressRepository.delete(address);
     }
 }

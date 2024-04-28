@@ -1,4 +1,4 @@
-.card{
+.card-main{
     min-height: 500px;
 }
 .actioner{
@@ -13,4 +13,9 @@
 }
 .form-container form{
     margin-right:10px;
+}
+.link-column{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
 }
