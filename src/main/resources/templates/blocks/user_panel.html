@@ -1,0 +1,28 @@
+<div th:fragment="user_panel">
+    <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+        <ul class="list-unstyled ps-0 functions">
+            <li class=" mb-1">
+                <a href="/user/profile">
+                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                            data-bs-target="#home-collapse" aria-expanded="false">
+                        Личные данные
+                    </button>
+                </a>
+            </li>
+            <li class=" mb-1">
+                <a href="/user/history">
+                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                            data-bs-target="#home-collapse" aria-expanded="false">
+                        История заказов
+                    </button>
+                </a>
+            </li>
+            <li class="border-top my-3"></li>
+            <li class="mb-1">
+                <form th:action="@{/logout}" method="post">
+                    <input type="submit" value="Выйти" class="btn btn-success"/>
+                </form>
+            </li>
+        </ul>
+    </div>
+</div>

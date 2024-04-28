@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html><!DOCTYPE html>
 <html lang="ru" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +20,6 @@
     />
     <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/admin_style.css}"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/add_style.css}"/>
 </head>
 <body>
 <header th:insert="blocks/header :: header"></header>
@@ -22,7 +30,7 @@
             <div class="card">
                 <div class="row">
                     <div class="col-md-1">
-                        <a class="link-back" th:href="@{/admin/category/all}">
+                        <a class="link-back" th:href="@{/admin/company/all}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                  class="bi bi-arrow-left" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
@@ -31,17 +39,12 @@
                         </a>
                     </div>
                     <div class="col-md-11">
-                        <h3 class="text-center mb-4">Новая категория</h3>
+                        <h3 class="text-center mb-4">Новая компания</h3>
                     </div>
                 </div>
-                <form th:action="@{/admin/category/add}" method="post">
+                <form th:action="@{'/admin/company/'+${company.id}+'/edit'}" method="post">
                     <label>Название:</label>
-                    <input type="text" name="name">
-                    <div th:each="type : ${T(org.example.model.ProductType).values()}">
-                        <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="productTypes"
-                               th:value="${type}" th:text="${type}">
-                    </div>
-                    <br>
+                    <input type="text" th:value="${company.name}" name="name">
                     <button class="btn btn-success" type="submit">Добавить</button>
                 </form>
             </div>

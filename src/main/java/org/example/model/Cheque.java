@@ -11,7 +11,7 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-public class Buy {
+public class Cheque {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

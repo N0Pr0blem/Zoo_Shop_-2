@@ -50,8 +50,8 @@
                         <h6 th:text="${product.name}"></h6>
                         <p th:text="${product.price}"></p>
                     </div>
-                    <form th:action="@{'/admin/product/'+${product.id}+'/delete'}" method="post">
-                        <button class="btn btn-success" type="submit">delete</button>
+                    <form th:action="@{'/user/product/'+${product.id}+'/toCart'}" method="post">
+                        <button class="btn btn-success" type="submit">В карзину</button>
                     </form>
                 </div>
             </div>

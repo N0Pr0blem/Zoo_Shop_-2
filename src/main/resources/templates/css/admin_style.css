@@ -1,4 +1,4 @@
-.card{
+.card-main{
     min-height: 500px;
 }
 .actioner{
@@ -7,4 +7,15 @@
 }
 .functions a:hover {
     color:   #8d21a6;
+}
+.form-container{
+    display:flex;
+}
+.form-container form{
+    margin-right:10px;
+}
+.link-column{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
 }

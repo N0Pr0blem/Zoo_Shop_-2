@@ -19,8 +19,21 @@
         <div class="col-md-2" th:insert="blocks/admin_panel::admin_panel"> </div>
         <div class="col-md-10">
             <div class="card">
+                <div class="row">
+                    <div class="col-md-1">
+                        <a class="link-back" th:href="@{/admin/product/all}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                 class="bi bi-arrow-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                      d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="col-md-11">
+                        <h3 class="text-center mb-4">Новый продукт</h3>
+                    </div>
+                </div>
                 <form th:action="@{/admin/product/add}" method="post">
-                    <h1>Новый товар</h1>
                     <label>Название</label>
                     <input type="text" name="name"><br>
                     <label>Цена</label>
@@ -28,24 +41,21 @@
                     <label>Скидка</label>
                     <input type="text" name="discount"><br>
                     <label>Тип</label>
-                    <select name="type">
-                        <option value="none" selected>Выбор типа товара</option>
+                    <select name="type" class="form-select" aria-label="Выбор типа товара">
                         <option th:each="enumm : ${T(org.example.model.ProductType).values()}"
                                 th:text="${enumm}"
                                 th:value="${enumm}">
                         </option>
                     </select><br>
                     <label>Компания</label>
-                    <select name="company">
-                        <option value="none" selected>Выбор названия компании</option>
+                    <select name="company" class="form-select" aria-label="Выбор названия компании">
                         <option th:each="comp : ${companies}"
                                 th:text="${comp.name}"
                                 th:value="${comp.id}">
                         </option>
                     </select><br>
                     <label>Категория</label>
-                    <select name="category">
-                        <option value="none" selected>Выбор названия категории</option>
+                    <select name="category" class="form-select" aria-label="Выбор названия категории">
                         <option th:each="cat : ${categories}"
                                 th:text="${cat.name}"
                                 th:value="${cat.id}">
@@ -58,8 +68,9 @@
                     <label>Количество</label>
                     <input type="text" name="count"><br>
                     <label>Картинка</label>
+                    <input type="text" name="imageName"><br>
                     <input type="file" name="image"><br>
-                    <button class="btn btn-success" type="submit">Add</button>
+                    <button class="btn btn-success" type="submit">Добавить</button>
                 </form>
             </div>
         </div>
