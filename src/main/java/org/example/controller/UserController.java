@@ -80,7 +80,24 @@ public class UserController {
 
     @PostMapping("/address/{address}/delete")
     public String deleteAddress(@PathVariable Address address, Principal principal) {
-        userService.deleteAddress(principal,address);
+        userService.deleteAddress(principal, address);
+        return "redirect:/user/profile";
+    }
+
+    @GetMapping("/password/edit")
+    public String passwordEditPage(Model model) {
+        return "user_edit_password";
+    }
+
+    @PostMapping("/password/edit")
+    public String passwordEdit(
+            String oldPassword,
+            String newPassword,
+            String repeatNewPassword,
+            Principal principal,
+            Model model
+    ) {
+        userService.changePassword(principal, oldPassword, newPassword, repeatNewPassword);
         return "redirect:/user/profile";
     }
 }
