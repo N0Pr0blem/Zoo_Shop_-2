@@ -75,4 +75,12 @@ public class UserService implements UserDetailsService {
         userRepository.save(user);
         addressRepository.delete(address);
     }
+
+    public void changePassword(Principal principal, String oldPassword, String newPassword, String repeatNewPassword) {
+        User user = userRepository.findByUsername(principal.getName());
+        if(repeatNewPassword.equals(newPassword) && user.getPassword().equals(oldPassword)){
+            user.setPassword(newPassword);
+            userRepository.save(user);
+        }
+    }
 }
