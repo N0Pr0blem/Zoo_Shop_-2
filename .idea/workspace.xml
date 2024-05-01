@@ -4,22 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91ea0ac6-38f7-4a1b-93b5-2be433a22c7c" name="Changes" comment="beautiful add product page">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/all_images.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/css/all_images_style.css" afterDir="false" />
+    <list default="true" id="91ea0ac6-38f7-4a1b-93b5-2be433a22c7c" name="Changes" comment="rewrite main redirector and product panel">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/ProductType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/ProductType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repos/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repos/CategoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/MinioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/MinioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_product_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_product_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/blocks/admin_panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/blocks/admin_panel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/address_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/address_add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user_edit_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user_edit_password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user_profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -388,11 +378,18 @@
       <option name="project" value="LOCAL" />
       <updated>1714374031404</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="rewrite main redirector and product panel">
+      <option name="closed" value="true" />
+      <created>1714548830139</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1714548830139</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Minio uploading files WORK!!!!!" />
     <MESSAGE value="Add categories for products and make crutch for uploading images ti minio" />
     <MESSAGE value="add admin controller and base admin functions" />
     <MESSAGE value="промежуточный коммит перед добалением конфига" />
@@ -417,6 +414,7 @@
     <MESSAGE value="front edition, buttons fix" />
     <MESSAGE value="add/delete address function for user" />
     <MESSAGE value="beautiful add product page" />
-    <option name="LAST_COMMIT_MESSAGE" value="beautiful add product page" />
+    <MESSAGE value="rewrite main redirector and product panel" />
+    <option name="LAST_COMMIT_MESSAGE" value="rewrite main redirector and product panel" />
   </component>
 </project>
