@@ -2,6 +2,7 @@ package org.example.service;
 
 import io.minio.*;
 import io.minio.errors.*;
+import io.minio.messages.Item;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Base64;
+import java.util.List;
 
 @Service
 public class MinioService {
@@ -35,9 +38,9 @@ public class MinioService {
             if (!found) {
                 minioClient.makeBucket(MakeBucketArgs.builder().bucket(bucketName).build());
             } else {
-                logger.info("Bucket "+bucketName+" already exists.");
+                logger.info("Bucket " + bucketName + " already exists.");
             }
-            minioClient.uploadObject(UploadObjectArgs.builder().bucket(bucketName).object(file.getName()).filename("D:\\Code\\Java\\Storehouse\\src\\main\\resources\\image-loader\\"+file.getPath()).build());
+            minioClient.uploadObject(UploadObjectArgs.builder().bucket(bucketName).object(file.getName()).filename("D:\\Code\\Java\\Storehouse\\src\\main\\resources\\image-loader\\" + file.getPath()).build());
             logger.info("Success");
         } catch (MinioException e) {
             logger.error("Error occurred: " + e);
@@ -67,11 +70,27 @@ public class MinioService {
         byte[] imageBytes = baos.toByteArray();
         return imageBytes;
     }
-    public String test(){
+
+    public String test() {
         return "hello";
     }
 
     public String getMinioUrl() {
         return minioUrl;
+    }
+
+    public List<Item> getAllImages() {
+        Iterable<Result<Item>> results = minioClient.listObjects(
+                ListObjectsArgs.builder().bucket(bucketName).build());
+        List<Item> images = new ArrayList<>();
+        results.forEach(result -> {
+            try {
+                images.add(result.get());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        return images;
+
     }
 }

@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import io.minio.messages.Item;
 import org.example.model.Category;
 import org.example.model.Company;
 import org.example.model.Product;
@@ -13,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 
@@ -44,6 +46,14 @@ public class AdminController {
         model.addAttribute("minioUrl", minioService.getMinioUrl());
         return "admin_product_add";
     }
+    @GetMapping("/product/add/{path}")
+    public String addProductWithPage(@PathVariable String path, Model model) {
+        model.addAttribute("companies", companyService.getAll());
+        model.addAttribute("categories", categoryService.getAll());
+        model.addAttribute("minioUrl", minioService.getMinioUrl());
+        model.addAttribute("path", path);
+        return "admin_product_add";
+    }
 
     @PostMapping("/product/add")
     public String addProduct(Product product, @RequestParam File image, @RequestParam String imageName, Model model) {
@@ -66,7 +76,7 @@ public class AdminController {
     @PostMapping("/product/{product}/delete")
     public String deleteProduct(@PathVariable Product product) {
         productService.delete(product);
-        return "redirect:/product";
+        return "redirect:/admin/product/all";
     }
 
     @GetMapping("/category/add")
@@ -144,4 +154,11 @@ public class AdminController {
         userService.makeUser(user);
         return "redirect:/admin/users";
     }
+    @GetMapping("/images/all")
+    public String allImagesPage(Model model){
+        List<Item> imgs = minioService.getAllImages();
+        model.addAttribute("imgs",imgs);
+        return "all_images";
+    }
+
 }

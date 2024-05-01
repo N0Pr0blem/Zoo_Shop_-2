@@ -1,56 +1,56 @@
 <div th:fragment="admin_panel">
-    <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-        <span class="fs-5 fw-semibold">Админ панель</span>
-        <ul class="list-unstyled ps-0 functions">
-            <li class=" mb-1">
-                <a href="/admin/product/all">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                            data-bs-target="#home-collapse" aria-expanded="false">
-                        Продукты
-                    </button>
-                </a>
-            </li>
-            <li class="mb-1">
-                <a href="/admin/category/all">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                            data-bs-target="#home-collapse" aria-expanded="false">
-                        Категории
-                    </button>
-                </a>
-            </li>
-            <li class="mb-1">
-                <a href="/admin/company/all">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                            data-bs-target="#home-collapse" aria-expanded="false">
-                        Кампании
-                    </button>
-                </a>
-            </li>
-            <li class="mb-1">
-                <a href="/admin/users">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                            data-bs-target="#home-collapse" aria-expanded="false">
-                        Пользователи
-                    </button>
-                </a>
-            </li>
-            <li class="border-top my-3"></li>
-            <li class="mb-1">
-                <a th:href="${minioUrl}">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                            data-bs-target="#account-collapse" aria-expanded="false">
-                        Перейти к облаку
-                    </button>
-                </a>
-            </li>
-            <li class="mb-1">
-                <a href="/user/profile">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                            data-bs-target="#account-collapse" aria-expanded="false">
-                        Личный кабинет
-                    </button>
-                </a>
-            </li>
-        </ul>
-    </div>
+        <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+            <span class="fs-5 fw-semibold">Админ панель</span>
+            <ul class="list-unstyled ps-0 functions">
+                <li class=" mb-1">
+                    <a href="/admin/product/all">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#home-collapse" aria-expanded="false">
+                            Продукты
+                        </button>
+                    </a>
+                </li>
+                <li class="mb-1">
+                    <a href="/admin/category/all">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#home-collapse" aria-expanded="false">
+                            Категории
+                        </button>
+                    </a>
+                </li>
+                <li class="mb-1">
+                    <a href="/admin/company/all">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#home-collapse" aria-expanded="false">
+                            Кампании
+                        </button>
+                    </a>
+                </li>
+                <li class="mb-1">
+                    <a href="/admin/users">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#home-collapse" aria-expanded="false">
+                            Пользователи
+                        </button>
+                    </a>
+                </li>
+                <li class="border-top my-3"></li>
+                <li class="mb-1">
+                    <a th:href="${minioUrl}">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#account-collapse" aria-expanded="false">
+                            Перейти к облаку
+                        </button>
+                    </a>
+                </li>
+                <li class="mb-1">
+                    <a href="/user/profile">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#account-collapse" aria-expanded="false">
+                            Личный кабинет
+                        </button>
+                    </a>
+                </li>
+            </ul>
+        </div>
 </div>
