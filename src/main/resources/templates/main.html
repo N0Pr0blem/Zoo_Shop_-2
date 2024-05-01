@@ -22,7 +22,9 @@
             <div class="col-md-6 col-lg-8">
                 <h1>PetPlace.com</h1>
                 <h2>Добро пожаловать в интернет зоомагазин.</h2><br>
-                <button type="button" class="btn btn-success">В ПУТЬ</button>
+                <form th:action="@{/product}" method="get">
+                    <button type="submit" class="btn btn-success">В ПУТЬ</button>
+                </form>
             </div>
         </div>
     </div>
@@ -77,9 +79,6 @@
             <div class="col company-item">
                 <a href="#"><img th:src="@{image/benek.jpg}" alt=""></a>
             </div>
-        </div>
-        <div th:insert="blocks/redirector::redirector">
-
         </div>
     </div>
 </main>

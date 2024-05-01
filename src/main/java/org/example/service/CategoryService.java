@@ -58,4 +58,8 @@ public class CategoryService {
         category.regeneratePath();
         categoryRepository.save(category);
     }
+
+    public Category findByPath(String path) {
+        return categoryRepository.findByPath(path);
+    }
 }

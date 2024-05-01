@@ -1,7 +1,9 @@
 package org.example.controller;
 
 import io.minio.errors.*;
+import org.example.model.Category;
 import org.example.model.Product;
+import org.example.model.ProductType;
 import org.example.service.CategoryService;
 import org.example.service.CompanyService;
 import org.example.service.MinioService;
@@ -33,27 +35,26 @@ public class ProductController {
         return "product";
     }
 
-    @GetMapping("/cat")
-    public String catPage(Model model) {
-        model.addAttribute("products", productService.getCatProducts());
+    @GetMapping("/{type}")
+    public String typeProductPage(@PathVariable String type, Model model) {
+        ProductType productType = ProductType.fromString(type);
+        model.addAttribute("categories", categoryService.findByType(productType));
+        model.addAttribute("type", type);
+        model.addAttribute("products", productService.getProductsByType(productType));
         return "product";
     }
 
-    @GetMapping("/dog")
-    public String dogPage(Model model) {
-        model.addAttribute("products", productService.getDogProducts());
-        return "product";
-    }
-
-    @GetMapping("/rodent")
-    public String rodentPage(Model model) {
-        model.addAttribute("products", productService.getRodentProducts());
-        return "product";
-    }
-
-    @GetMapping("/parrot")
-    public String parrotPage(Model model) {
-        model.addAttribute("products", productService.getParrotProducts());
+    @GetMapping("/{type}/{categoryPath}")
+    public String categoryProductPage(
+            @PathVariable String type,
+            @PathVariable String categoryPath,
+            Model model
+    ) {
+        ProductType productType = ProductType.fromString(type);
+        Category category = categoryService.findByPath(categoryPath);
+        model.addAttribute("categories", categoryService.findByType(productType));
+        model.addAttribute("type", type);
+        model.addAttribute("products", productService.getProductsByCategoryAndType(category,productType));
         return "product";
     }
 }
