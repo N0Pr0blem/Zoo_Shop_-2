@@ -25,3 +25,13 @@ th, td {
 tr:hover {
     background-color: #f8f9fa;
 }
+.form-container{
+    display:flex;
+}
+.form-container button,input{
+    margin-right:10px;
+}
+.btn-outline-dark{
+    height:40px;
+    width:40px;
+}

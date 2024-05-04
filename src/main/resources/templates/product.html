@@ -51,7 +51,7 @@
                         <h6 th:text="${product.name}"></h6>
                         <p th:text="${product.price}"></p>
                     </div>
-                    <form th:action="@{'/user/product/'+${product.id}+'/toCart'}" method="post">
+                    <form th:action="@{'/user/product/'+${product.id}+'/to_cart'}" method="post">
                         <button class="btn btn-success" type="submit">В карзину</button>
                     </form>
                 </div>

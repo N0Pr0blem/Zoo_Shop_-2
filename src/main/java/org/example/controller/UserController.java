@@ -3,6 +3,7 @@ package org.example.controller;
 import org.example.model.Address;
 import org.example.model.Cheque;
 import org.example.model.User;
+import org.example.service.ChequeService;
 import org.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -22,15 +23,6 @@ public class UserController {
     @Autowired
     ChequeService chequeService;
 
-    @GetMapping("/add")
-    public String addUserPage() {
-        return "user_add";
-    }
-
-    @PostMapping("/add")
-    public String addDefaultUser() {
-        return "redirect:/";
-    }
 
     @GetMapping("/profile")
     public String userProfilePage(Principal principal, Model model) {
@@ -56,6 +48,7 @@ public class UserController {
     @GetMapping("/cart")
     public String userCartPage(Principal principal, Model model) {
         model.addAttribute("cartProducts", userService.getUser(principal.getName()).getProducts());
+        model.addAttribute("sum",userService.getUser(principal.getName()).getSum());
         return "user_cart";
     }
 

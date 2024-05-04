@@ -24,20 +24,60 @@
                 <th scope="col">#</th>
                 <th scope="col">Наименование товара</th>
                 <th scope="col">Цена</th>
+                <th scope="col">Количество</th>
+                <th scope="col"></th>
             </tr>
             </thead>
             <tbody>
-            <!-- Используем Thymeleaf для вывода списка товаров в корзине -->
-            <tr th:each="product, index : ${cartProducts}">
-                <td th:text="${index + 1}"></td>
-                <td th:text="${product.name}"></td>
-                <td th:text="${product.price}"></td>
+            <tr th:each="product : ${cartProducts}">
+                <td th:text="${product.id}"></td>
+                <td th:text="${product.itemName}"></td>
+                <td th:text="@{${product.pricePerItem} + ' BYN'}"></td>
+                <td>
+                    <div class="form-container">
+                        <form th:action="@{'/user/product/'+${product.id}+'/decrement'}" method="post">
+                            <button class="btn btn-outline-dark" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                     class="bi bi-dash" viewBox="0 0 16 16">
+                                    <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
+                                </svg>
+                            </button>
+                        </form>
+                        <input style="width:40px;height:40px;" type="text" name="count" class="form-control"
+                               th:value="${product.quantity}" readonly id="count">
+                        <form th:action="@{'/user/product/'+${product.id}+'/increment'}"  method="post">
+                            <button class="btn btn-outline-dark" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                     class="bi bi-plus" viewBox="0 0 16 16">
+                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </td>
+                <td>
+                    <form th:action="@{'/user/cart/product/'+${product.id}+'/delete'}" method="post">
+                        <button type="submit" class="btn btn-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-trash" viewBox="0 0 16 16">
+                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                                <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                            </svg>
+                        </button>
+                    </form>
+                </td>
             </tr>
             </tbody>
         </table>
+        <h1>Итого</h1>
+        <h3 th:text="@{${sum}+' BYN'}"></h3>
+        <form th:action="@{'/user/'+user.id+'/buy'}" method="post">
+            <button class="btn btn-success" type="submit">Оформить заказ</button>
+        </form>
     </div>
 </div>
 <footer th:insert="blocks/footer :: footer" class="text-body-secondary py-5 bg-dark"></footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+<script th:src="@{/js/cart_script.js}"></script>
 </body>
 </html>

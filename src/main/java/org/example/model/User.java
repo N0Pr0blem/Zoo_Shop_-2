@@ -35,7 +35,7 @@ import java.util.Set;
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id")
     )
-    private List<Product> products;
+    private List<PurchasedProduct> products;
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
@@ -104,7 +104,7 @@ import java.util.Set;
       return this;
    }
 
-   public User setProducts(List<Product> products) {
+   public User setProducts(List<PurchasedProduct> products) {
       this.products = products;
       return this;
    }
@@ -120,5 +120,13 @@ import java.util.Set;
     public void addAddress(Address address) {
         this.addresses.add(address);
 
+    }
+
+    public double getSum() {
+        double sum =0;
+        for(PurchasedProduct p : products){
+            sum=sum+p.getQuantity()*p.getPricePerItem();
+        }
+        return sum;
     }
 }
