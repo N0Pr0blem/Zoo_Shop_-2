@@ -18,8 +18,17 @@ public class ShopService {
     public void addProductToCart(Principal principal, Product product) {
         User user = userService.getUser(principal.getName());
         PurchasedProduct purchasedProduct = new PurchasedProduct(product);
-        productRepository.save(purchasedProduct);
-        user.getProducts().add(purchasedProduct);
+        if(user.getProducts().contains(purchasedProduct)) {
+            int index = user.getProducts().indexOf(purchasedProduct);
+
+            user.getProducts().
+                    get(index).
+                    setQuantity(user.getProducts().get(index).getQuantity()+1);
+        }
+        else{
+            user.getProducts().add(purchasedProduct);
+            productRepository.save(purchasedProduct);
+        }
         userService.save(user);
     }
 

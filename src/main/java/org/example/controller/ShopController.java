@@ -2,9 +2,13 @@ package org.example.controller;
 
 import org.example.model.Product;
 import org.example.model.PurchasedProduct;
+import org.example.model.User;
 import org.example.service.ShopService;
+import org.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -38,4 +42,5 @@ public class ShopController {
         shopService.increment(product);
         return"redirect:/user/cart";
     }
+
 }

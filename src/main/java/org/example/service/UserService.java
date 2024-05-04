@@ -1,9 +1,6 @@
 package org.example.service;
 
-import org.example.model.Address;
-import org.example.model.Cheque;
-import org.example.model.Role;
-import org.example.model.User;
+import org.example.model.*;
 import org.example.repos.AddressRepository;
 import org.example.repos.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,6 +82,12 @@ public class UserService implements UserDetailsService {
     }
 
     public void save(User user) {
+        userRepository.save(user);
+    }
+
+
+    public void clearCart(User user) {
+        user.getProducts().clear();
         userRepository.save(user);
     }
 }

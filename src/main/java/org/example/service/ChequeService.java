@@ -1,6 +1,7 @@
 package org.example.service;
 
 import org.example.model.Cheque;
+import org.example.model.PurchasedProduct;
 import org.example.model.User;
 import org.example.repos.ChequeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,5 +16,10 @@ public class ChequeService {
 
     public List<Cheque> getAllChequesUser(User user) {
         return chequeRepository.findByUserId(user.getId());
+    }
+
+    public void saveOrder(User user) {
+        Cheque cheque = new Cheque(user.getId(), user.getProducts(), user.getSum());
+        chequeRepository.save(cheque);
     }
 }

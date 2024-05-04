@@ -4,6 +4,7 @@ import org.example.model.Address;
 import org.example.model.Cheque;
 import org.example.model.User;
 import org.example.service.ChequeService;
+import org.example.service.ShopService;
 import org.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -22,6 +23,9 @@ public class UserController {
     UserService userService;
     @Autowired
     ChequeService chequeService;
+    @Autowired
+    ShopService shopService;
+
 
 
     @GetMapping("/profile")
@@ -92,5 +96,19 @@ public class UserController {
     ) {
         userService.changePassword(principal, oldPassword, newPassword, repeatNewPassword);
         return "redirect:/user/profile";
+    }
+
+    @GetMapping("/buy")
+    public String buyPage(Model model, Principal principal){
+        model.addAttribute("sum",userService.getUser(principal.getName()).getSum());
+        model.addAttribute("user",userService.getUser(principal.getName()));
+        return "user_buy";
+    }
+    @PostMapping("/buy")
+    public String buyPage(Principal principal){
+        User user = userService.getUser(principal.getName());
+        chequeService.saveOrder(user);
+        userService.clearCart(user);
+        return"redirect:/user/profile";
     }
 }

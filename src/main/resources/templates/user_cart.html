@@ -71,7 +71,7 @@
         </table>
         <h1>Итого</h1>
         <h3 th:text="@{${sum}+' BYN'}"></h3>
-        <form th:action="@{'/user/'+user.id+'/buy'}" method="post">
+        <form th:action="@{/user/buy}" method="get">
             <button class="btn btn-success" type="submit">Оформить заказ</button>
         </form>
     </div>
