@@ -12,3 +12,13 @@
     justify-content: space-between;
 
 }
+.card-cheque{
+    min-height:500px;
+}
+.bg-primary {
+    --bs-bg-opacity: 1;
+    background-color:#8d21a6 !important;
+}
+tr.spaceUnder>td {
+    padding-bottom: 1em;
+}

@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -17,7 +18,26 @@ public class Cheque {
     private Long id;
     private Long userId;
     private LocalDateTime purchaseDateTime;
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToMany
+    @JoinTable(
+            name = "cheque_product",
+            joinColumns = @JoinColumn(name = "cheque_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id")
+    )
     private List<PurchasedProduct> purchasedProduct;
-    private BigDecimal totalCost;
+    private Double totalCost;
+
+    public Cheque() {
+    }
+
+    public Cheque(Long userId, List<PurchasedProduct> purchasedProduct, Double totalCost) {
+        this.userId = userId;
+        this.purchaseDateTime =LocalDateTime.now();
+        this.purchasedProduct = new ArrayList<>();
+        for (PurchasedProduct product : purchasedProduct){
+            product.setOrdered(true);
+            this.purchasedProduct.add(product);
+        }
+        this.totalCost = totalCost;
+    }
 }
