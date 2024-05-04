@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.List;
 
 @PreAuthorize("hasAuthority('USER')")
@@ -39,9 +40,9 @@ public class UserController {
     @GetMapping("/history")
     public String userHistoryPage(Principal principal, Model model) {
         User user = userService.getUser(principal.getName());
-        List<Cheque> сheques = chequeService.getAllChequesUser(user);
-        model.addAttribute("сheques", сheques);
-        return "user_сheque";
+        ArrayList<Cheque> cheques = chequeService.getAllChequesUser(user);
+        model.addAttribute("cheques", cheques);
+        return "user_cheque";
     }
 
     @GetMapping("/demo")

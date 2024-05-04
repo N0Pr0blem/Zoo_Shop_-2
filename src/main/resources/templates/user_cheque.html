@@ -22,23 +22,26 @@
                 <div th:insert="blocks/user_panel::user_panel"></div>
             </div>
             <div class="col-md-9">
-                <div class="card">
+                <div class="card card-cheque">
                     <table>
                         <tr>
                             <th>Дата</th>
                             <th>Цена</th>
                             <th>Товары</th>
                         </tr>
-                        <!--<tr th:each="сheque : ${сheques}">
-                            <td th:text="${сheque.purchaseDateTime}"></td>
-                            <td th:text="${сheque.totalCost}"></td>
+                        <tr class="spaceUnder" th:each="cheque : ${cheques}">
+                            <td style="vertical-align: top;" th:text="${cheque.purchaseDateTime}"></td>
+                            <td style="vertical-align: top;" th:text="${cheque.totalCost}"></td>
                             <td>
-                                <div th:each="product : ${сheque.purchasedProduct}">
-                                    <p th:text="${product.itemName}"></p>
-                                    <p th:text="${product.quantity}"></p>
-                                </div>
+                                <ul class="list-group">
+                                    <li th:each="prod : ${cheque.purchasedProduct}"
+                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span th:text="@{${prod.itemName}+' '+${prod.pricePerItem}+' BYN'}"></span>
+                                        <span class="badge bg-primary rounded-pill" th:text="${prod.quantity}"></span>
+                                    </li>
+                                </ul>
                             </td>
-                        </tr>-->
+                        </tr>
                     </table>
                 </div>
             </div>
