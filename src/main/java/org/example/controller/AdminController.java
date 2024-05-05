@@ -161,4 +161,15 @@ public class AdminController {
         return "all_images";
     }
 
+    @GetMapping("/company/{company}/edit")
+    public String editCompanyPage(@PathVariable Company company, Model model){
+        model.addAttribute("company",company);
+        return "admin_company_edit";
+    }
+
+    @PostMapping("/company/{company}/edit")
+    public String editCompany(@PathVariable Company company,@RequestParam String name){
+        companyService.edit(company,name);
+        return"redirect:/admin/company/all";
+    }
 }
