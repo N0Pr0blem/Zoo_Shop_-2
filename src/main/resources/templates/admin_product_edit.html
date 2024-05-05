@@ -16,7 +16,7 @@
 <header th:insert="blocks/header :: header"></header>
 <div class="container main">
     <div class="row">
-        <div class="col-md-2" th:insert="blocks/admin_panel::admin_panel"> </div>
+        <div class="col-md-2" th:insert="blocks/admin_panel::admin_panel"></div>
         <div class="col-md-10">
             <div class="card">
                 <div class="row">
@@ -30,63 +30,82 @@
                         </a>
                     </div>
                     <div class="col-md-11">
-                        <h3 class="text-center mb-4">Новый продукт</h3>
+                        <h3 class="text-center mb-4">Изменить продукт</h3>
                     </div>
                 </div>
-                <form th:action="@{/admin/product/add}" method="post">
+                <form th:action="@{'/admin/product/'+${product.id}+'/edit'}" method="post">
                     <div class="form-group">
                         <label for="nameInput">Название</label>
-                        <input type="text" name="name" id="nameInput" class="form-control" placeholder="Введите название">
+                        <input type="text" th:value="${product.name}" name="name" id="nameInput" class="form-control"
+                               placeholder="Введите название">
                     </div>
                     <div class="form-group">
                         <label for="priceInput">Цена</label>
-                        <input type="text" name="price" id="priceInput" class="form-control"
-                                placeholder="Введите цену">
+                        <input type="text" th:value="${product.price}" name="price" id="priceInput" class="form-control"
+                               placeholder="Введите цену">
                     </div>
                     <div class="form-group">
                         <label for="discountInput">Скидка</label>
-                        <input type="text" name="discount" id="discountInput" class="form-control"
-                                placeholder="Введите скидку">
+                        <input type="text" th:value="${product.discount}" name="discount" id="discountInput"
+                               class="form-control" placeholder="Введите скидку">
                     </div>
                     <label>Тип</label>
                     <select name="type" class="form-select" aria-label="Выбор типа товара">
+                        <option
+                                th:text="${product.type}"
+                                th:value="${product.type}"
+                                selected>
+                        </option>
                         <option th:each="enumm : ${T(org.example.model.ProductType).values()}"
+                                th:if="${enumm != product.type}"
                                 th:text="${enumm}"
                                 th:value="${enumm}">
                         </option>
                     </select>
                     <label>Компания</label>
                     <select name="company" class="form-select" aria-label="Выбор названия компании">
+                        <option
+                                th:text="${product.company.name}"
+                                th:value="${product.company.name}"
+                                selected>
+                        </option>
                         <option th:each="comp : ${companies}"
                                 th:text="${comp.name}"
-                                th:value="${comp.name}">
+                                th:value="${comp.id}"
+                                th:if="${comp != product.company}">
                         </option>
                     </select>
                     <label>Категория</label>
                     <select name="category" class="form-select" aria-label="Выбор названия категории">
+                        <option
+                                th:text="${product.category.name}"
+                                th:value="${product.category.name}"
+                                selected>
+                        </option>
                         <option th:each="cat : ${categories}"
                                 th:text="${cat.name}"
-                                th:value="${cat.name}">
+                                th:value="${cat.id}"
+                                th:if="${cat != product.category}">
                         </option>
                     </select>
                     <div class="mb-3">
                         <label for="descriptionInput" class="form-label">Описание</label>
                         <input type="text" name="description" id="descriptionInput" class="form-control"
-                                placeholder="Введите описание">
+                               placeholder="Введите описание" th:value="${product.description}">
                     </div>
                     <div class="form-group">
                         <label for="countInput">Количество</label>
                         <input type="text" name="count" id="countInput" class="form-control"
-                                placeholder="Введите количество">
+                               placeholder="Введите количество" th:value="${product.count}">
                     </div>
-                    <a href="/admin/product/add/images/all" th:text="'Выбрать из облака: '+${session.path}">
-
+                    <a href="/admin/product/edit/images/all" th:text="'Выбрать из облака: '+${path}">
                     </a><br>
                     <label>
-                        <input type="text" name="imageName" class="form-control" th:value="${session.path}" readonly>
+                        <input type="text" name="image_db" class="form-control"
+                               th:value="${session.path eq null} ? ${product.image} : ${session.path}" readonly>
                     </label>
-                    <input type="file" name="image"><br>
-                    <button class="btn btn-success" type="submit">Добавить</button>
+                    <input type="file" name="image_pc"><br>
+                    <button class="btn btn-success" type="submit">Изменить</button>
                 </form>
             </div>
         </div>

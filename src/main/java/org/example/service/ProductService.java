@@ -1,9 +1,7 @@
 package org.example.service;
 
 import org.example.exception.DBException;
-import org.example.model.Category;
-import org.example.model.Product;
-import org.example.model.ProductType;
+import org.example.model.*;
 import org.example.repos.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,8 +13,19 @@ public class ProductService {
     @Autowired
     ProductRepository productRepo;
 
-    public void addProduct(Product product) throws DBException {
-        Product productFromDB = productRepo.findByName(product.getName());
+    public void addProduct(ProductContainer productContainer,Company company,Category category) throws DBException {
+        Product productFromDB = productRepo.findByName(productContainer.getName());
+        Product product = new Product();
+        product.setName(productContainer.getName());
+        product.setPrice(Double.parseDouble(productContainer.getPrice()));
+        product.setDiscount(Double.parseDouble(productContainer.getDiscount()));
+        product.setCompany(company);
+        product.setCategory(category);
+        product.setCount(Integer.parseInt(productContainer.getCount()));
+        product.setDescription(productContainer.getDescription());
+        product.setImage(productContainer.getImage());
+        product.setType(ProductType.fromString(productContainer.getType()));
+
         if(productFromDB==null){
             productRepo.save(product);
         }
@@ -46,5 +55,18 @@ public class ProductService {
             }
         }
         return res;
+    }
+
+    public void edit(Product product, ProductContainer productContainer, Company company,Category category) {
+        product.setName(productContainer.getName());
+        product.setPrice(Double.parseDouble(productContainer.getPrice()));
+        product.setDiscount(Double.parseDouble(productContainer.getDiscount()));
+        product.setType(ProductType.fromString(productContainer.getType()));
+        product.setCompany(company);
+        product.setCategory(category);
+        product.setDescription(productContainer.getDescription());
+        product.setCount(Integer.parseInt(productContainer.getCount()));
+        product.setImage(productContainer.getImage());
+        productRepo.save(product);
     }
 }

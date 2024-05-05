@@ -22,7 +22,8 @@
             <div class="card">
                 <div class="row col-md-9 row-cols-1 row-cols-2 row-cols-3">
                     <div class="col" th:each="img : ${imgs}">
-                        <form th:action="'/admin/product/add/'+${img.objectName}" method="get">
+                        <form th:action="@{'/admin/product/add/images/all/'+${img.objectName}}" method="post">
+                            <input type="hidden" th:value="${productContainer}">
                             <button class="btn btn-success-outline card-image" type="submit">
                                 <img th:src="@{'/image/'+${img.objectName}}">
                             </button>

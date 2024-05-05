@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91ea0ac6-38f7-4a1b-93b5-2be433a22c7c" name="Changes" comment="History work">
+    <list default="true" id="91ea0ac6-38f7-4a1b-93b5-2be433a22c7c" name="Changes" comment="Edit company">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/ProductContainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_product_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/all_images_edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/WebConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/CategoryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/CompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/CompanyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_company_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_company_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_product_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_product_add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/all_images.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/all_images_add.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +28,9 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="Class" />
         <option value="HTML File" />
       </list>
     </option>
@@ -61,6 +69,9 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Code\Java\Storehouse\src\main\resources\templates" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="org.example.component" />
     </key>
   </component>
   <component name="RunManager">
@@ -409,11 +420,18 @@
       <option name="project" value="LOCAL" />
       <updated>1714823711433</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Edit company">
+      <option name="closed" value="true" />
+      <created>1714896677833</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1714896677833</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="css connect success" />
     <MESSAGE value="insert main page" />
     <MESSAGE value="Output of all models" />
     <MESSAGE value="Add base user components" />
@@ -438,6 +456,7 @@
     <MESSAGE value="front sugar" />
     <MESSAGE value="cart adding product" />
     <MESSAGE value="Cheques saves" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cheques saves" />
+    <MESSAGE value="Edit company" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit company" />
   </component>
 </project>

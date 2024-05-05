@@ -34,4 +34,8 @@ public class CompanyService {
         company.setName(name);
         companyRepo.save(company);
     }
+
+    public Company getByName(String company) {
+        return companyRepo.findByName(company);
+    }
 }

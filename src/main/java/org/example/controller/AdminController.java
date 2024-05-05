@@ -1,10 +1,11 @@
 package org.example.controller;
 
 import io.minio.messages.Item;
-import org.example.model.Category;
-import org.example.model.Company;
-import org.example.model.Product;
-import org.example.model.User;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.example.model.*;
 import org.example.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -32,6 +33,7 @@ public class AdminController {
     UserService userService;
     @Autowired
     MinioService minioService;
+    Logger logger = LogManager.getLogger(AdminController.class);
 
     @GetMapping()
     public String getAdminPage(Model model) {
@@ -40,23 +42,17 @@ public class AdminController {
     }
 
     @GetMapping("/product/add")
-    public String addProductPage(Model model) {
+    public String addProductPage(Model model, ProductContainer productContainer, HttpSession session) {
         model.addAttribute("companies", companyService.getAll());
         model.addAttribute("categories", categoryService.getAll());
         model.addAttribute("minioUrl", minioService.getMinioUrl());
-        return "admin_product_add";
-    }
-    @GetMapping("/product/add/{path}")
-    public String addProductWithPage(@PathVariable String path, Model model) {
-        model.addAttribute("companies", companyService.getAll());
-        model.addAttribute("categories", categoryService.getAll());
-        model.addAttribute("minioUrl", minioService.getMinioUrl());
-        model.addAttribute("path", path);
+        session.setAttribute("productContainer", productContainer);
+        logger.info(productContainer.getName());
         return "admin_product_add";
     }
 
     @PostMapping("/product/add")
-    public String addProduct(Product product, @RequestParam File image, @RequestParam String imageName, Model model) {
+    public String addProduct(ProductContainer product, @RequestParam File image, @RequestParam String imageName, Model model, HttpSession session) {
         try {
             if (imageName.isEmpty()) {
                 product.setImage(image.getPath());
@@ -64,13 +60,43 @@ public class AdminController {
             } else {
                 product.setImage(imageName);
             }
-            productService.addProduct(product);
+            Company company_db = companyService.getByName(product.getCompany());
+            Category category_db = categoryService.getByName(product.getCategory());
+            logger.info(product.getCompany());
+            logger.info(company_db.getName());
+            productService.addProduct(product,company_db,category_db);
+            session.removeAttribute("path");
 
         } catch (Exception ex) {
             model.addAttribute("message", ex.getMessage());
         } finally {
             return "redirect:/admin/product/add";
         }
+    }
+
+    @GetMapping("/product/{product}/edit")
+    public String editProductPage(@PathVariable Product product, Model model, HttpSession session) {
+        model.addAttribute("product", product);
+        model.addAttribute("companies", companyService.getAll());
+        model.addAttribute("categories", categoryService.getAll());
+        model.addAttribute("minioUrl", minioService.getMinioUrl());
+        session.setAttribute("id", product.getId());
+        return "admin_product_edit";
+    }
+
+    @PostMapping("/product/{product}/edit")
+    public String editProduct(@PathVariable Product product, ProductContainer productContainer, @RequestParam File image_pc, @RequestParam String image_db, HttpSession session) {
+        Company company_db = companyService.getByName(productContainer.getCompany());
+        Category category_db = categoryService.getByName(productContainer.getCategory());
+        if (image_pc.getName().isEmpty()) {
+            productContainer.setImage(image_db);
+        } else {
+            productContainer.setImage(image_pc.getName());
+            minioService.uploadFileToMinIO(image_pc);
+        }
+        productService.edit(product, productContainer, company_db, category_db);
+        session.removeAttribute("path");
+        return "redirect:/admin/product/all";
     }
 
     @PostMapping("/product/{product}/delete")
@@ -104,12 +130,6 @@ public class AdminController {
         return "redirect:/admin/company/add";
     }
 
-    @GetMapping("/company/add")
-    public String addCompanyPage(Model model) {
-        model.addAttribute("minioUrl", minioService.getMinioUrl());
-        return "admin_company_add";
-    }
-
     @GetMapping("/product/all")
     public String allProductPage(Model model) {
         model.addAttribute("products", productService.getAll());
@@ -131,9 +151,27 @@ public class AdminController {
         return "admin_companies_all";
     }
 
+    @GetMapping("/company/add")
+    public String addCompanyPage(Model model) {
+        model.addAttribute("minioUrl", minioService.getMinioUrl());
+        return "admin_company_add";
+    }
+
     @PostMapping("/company/{company}/delete")
     public String deleteCategory(@PathVariable Company company) {
         companyService.delete(company);
+        return "redirect:/admin/company/all";
+    }
+
+    @GetMapping("/company/{company}/edit")
+    public String editCompanyPage(@PathVariable Company company, Model model) {
+        model.addAttribute("company", company);
+        return "admin_company_edit";
+    }
+
+    @PostMapping("/company/{company}/edit")
+    public String editCompany(@PathVariable Company company, @RequestParam String name) {
+        companyService.edit(company, name);
         return "redirect:/admin/company/all";
     }
 
@@ -154,22 +192,30 @@ public class AdminController {
         userService.makeUser(user);
         return "redirect:/admin/users";
     }
-    @GetMapping("/images/all")
-    public String allImagesPage(Model model){
+
+    @GetMapping("/product/add/images/all")
+    public String allImagesAddPage(Model model, HttpSession session) {
         List<Item> imgs = minioService.getAllImages();
-        model.addAttribute("imgs",imgs);
-        return "all_images";
+        model.addAttribute("imgs", imgs);
+        return "all_images_add";
     }
 
-    @GetMapping("/company/{company}/edit")
-    public String editCompanyPage(@PathVariable Company company, Model model){
-        model.addAttribute("company",company);
-        return "admin_company_edit";
+    @PostMapping("/product/add/images/all/{image}")
+    public String allImagesAdd(@PathVariable String image, HttpSession session) {
+        session.setAttribute("path", image);
+        return "redirect:/admin/product/add";
     }
 
-    @PostMapping("/company/{company}/edit")
-    public String editCompany(@PathVariable Company company,@RequestParam String name){
-        companyService.edit(company,name);
-        return"redirect:/admin/company/all";
+    @GetMapping("/product/edit/images/all")
+    public String allImagesEditPage(Model model, HttpSession session) {
+        List<Item> imgs = minioService.getAllImages();
+        model.addAttribute("imgs", imgs);
+        return "all_images_edit";
+    }
+
+    @PostMapping("/product/edit/images/all/{image}")
+    public String allImagesEdit(@PathVariable String image, HttpSession session) {
+        session.setAttribute("path", image);
+        return "redirect:/admin/product/" + session.getAttribute("id") + "/edit";
     }
 }
