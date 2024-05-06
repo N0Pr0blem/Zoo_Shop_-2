@@ -62,4 +62,8 @@ public class CategoryService {
     public Category findByPath(String path) {
         return categoryRepository.findByPath(path);
     }
+
+    public Category getByName(String category) {
+        return categoryRepository.findByName(category);
+    }
 }

@@ -39,13 +39,13 @@
                         </a>
                     </div>
                     <div class="col-md-11">
-                        <h3 class="text-center mb-4">Новая компания</h3>
+                        <h3 class="text-center mb-4">Измеить компанию</h3>
                     </div>
                 </div>
                 <form th:action="@{'/admin/company/'+${company.id}+'/edit'}" method="post">
                     <label>Название:</label>
                     <input type="text" th:value="${company.name}" name="name">
-                    <button class="btn btn-success" type="submit">Добавить</button>
+                    <button class="btn btn-success" type="submit">Изменить</button>
                 </form>
             </div>
         </div>

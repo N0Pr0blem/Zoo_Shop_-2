@@ -29,4 +29,13 @@ public class CompanyService {
     public void delete(Company company) {
         companyRepo.delete(company);
     }
+
+    public void edit(Company company, String name) {
+        company.setName(name);
+        companyRepo.save(company);
+    }
+
+    public Company getByName(String company) {
+        return companyRepo.findByName(company);
+    }
 }

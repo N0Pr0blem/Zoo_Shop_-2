@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91ea0ac6-38f7-4a1b-93b5-2be433a22c7c" name="Changes" comment="Cheques saves">
+    <list default="true" id="91ea0ac6-38f7-4a1b-93b5-2be433a22c7c" name="Changes" comment="Edit product">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/product_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/ChequeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/ChequeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/css/user_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/css/user_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user_сheque.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user_cheque.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/css/main_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/css/main_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/css/product_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/css/product_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/js/cart_script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/js/cart_script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/product.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,10 +26,10 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -62,6 +67,9 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Code\Java\Storehouse\src\main\resources\templates" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="org.example.component" />
     </key>
   </component>
   <component name="RunManager">
@@ -410,12 +418,26 @@
       <option name="project" value="LOCAL" />
       <updated>1714823711433</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Edit company">
+      <option name="closed" value="true" />
+      <created>1714896677833</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1714896677833</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Edit product">
+      <option name="closed" value="true" />
+      <created>1714933920875</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1714933920875</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="css connect success" />
-    <MESSAGE value="insert main page" />
     <MESSAGE value="Output of all models" />
     <MESSAGE value="Add base user components" />
     <MESSAGE value="registration work" />
@@ -439,6 +461,8 @@
     <MESSAGE value="front sugar" />
     <MESSAGE value="cart adding product" />
     <MESSAGE value="Cheques saves" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cheques saves" />
+    <MESSAGE value="Edit company" />
+    <MESSAGE value="Edit product" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit product" />
   </component>
 </project>
