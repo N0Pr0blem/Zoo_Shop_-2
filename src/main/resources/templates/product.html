@@ -44,15 +44,18 @@
             <div class="col" th:each="product : ${products}">
                 <div class="card shadow-sm">
                     <div class="image-container">
-                        <a class="card-image" href="#"><img class="bd-placeholder-img card-img-top"
+                        <a class="card-image" th:href="@{'/product/'+${product.id}+'/info'}"><img class="bd-placeholder-img card-img-top"
                                                             th:src="@{'/image/'+${product.image}}" alt="Image"></a>
                     </div>
                     <div class="card-body">
                         <h6 th:text="${product.name}"></h6>
-                        <p th:text="${product.price}"></p>
+                        <span th:text="${product.price}"></span>
+                        <span th:text="${product.price + product.discount}" class="badge text-bg-secondary"
+                              style="text-decoration: line-through; text-decoration-color: red;"></span>
+
                     </div>
                     <form th:action="@{'/user/product/'+${product.id}+'/to_cart'}" method="post">
-                        <button class="btn btn-success" type="submit">В карзину</button>
+                        <button class="btn btn-success btn-cart" type="submit">В карзину</button>
                     </form>
                 </div>
             </div>

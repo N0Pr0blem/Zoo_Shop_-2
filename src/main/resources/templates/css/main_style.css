@@ -192,7 +192,7 @@
   object-fit: cover;
   height: 100%;
   width: 100%;
-  padding:50px;
+  padding:60px;
   -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
   -ms-filter: grayscale(100%);

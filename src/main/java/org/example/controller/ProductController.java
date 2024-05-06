@@ -57,4 +57,9 @@ public class ProductController {
         model.addAttribute("products", productService.getProductsByCategoryAndType(category,productType));
         return "product";
     }
+    @GetMapping("/{product}/info")
+    public String productInfoPage(@PathVariable Product product, Model model){
+        model.addAttribute("product",product);
+        return "product_info";
+    }
 }
